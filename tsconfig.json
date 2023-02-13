@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    /*  */
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    /*  */
+    "incremental": true,
+    "declaration": true,
+    "sourceMap": true,
+    /*  */
+    "noEmit": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    /*  */
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "plugins": [{ "name": "next" }]
+  },
+  "include": ["next-env.d.ts", "types/react-app-env.d.types/twin.d.tsn.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": [".next", "next.config.js", "node_modules", "dist", "build"],
+  "extends": "./jsconfig.json"
+}

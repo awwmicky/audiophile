@@ -1,11 +1,12 @@
 import { Children } from 'react'
-import { Layer } from '@/components/layout'
+// import { Layer } from '@/components/layout'
 import { contentBottom } from './_.constants'
 import * as X from './_.styles'
 
 const Bottom = () => (
-		<Layer>
-			<X.Grid>
+		<div className="bg-[#101010]/75">
+		<X.Frame>
+			{/* <X.Grid> */}
 				<X.Group>
 					<X.Title text={ contentBottom.text.techUsed } />
 					<X.List>
@@ -30,8 +31,9 @@ const Bottom = () => (
 				<X.ClosingText>
 					<code>{ contentBottom.text.madeBy }</code>
 				</X.ClosingText>
-			</X.Grid>
-		</Layer>
+			{/* </X.Grid> */}
+		</X.Frame>
+	</div>
 )
 
 export { Bottom }

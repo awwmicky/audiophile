@@ -1,8 +1,7 @@
 import tw, { styled } from 'twin.macro'
 
-export const Frame = tw.div`
-	flex flex-col flex-wrap
-	sm:(flex-row place-content-between)
+export const Grid = tw.div`
+	grid md:grid-cols-2
 `
 
 export const Group = tw.div``
@@ -18,7 +17,7 @@ export const Title = styled('p')
 	.attrs(TitleAttrs)<ITitle>(TitleStyle)
 
 export const List = tw.ul`
-	m-0 flex gap-4 place-content-center place-items-center
+	m-0 flex gap-4 flex-wrap place-content-center place-items-center
 	[&>li]:mb-0 [& hr]:(w-[2px] h-6 bg-black)
 `
 
@@ -32,4 +31,7 @@ const LinkAttr = ({ open }: ILink) => ({
 export const Link = styled('a')
 	.attrs(LinkAttr)<ILink>(() => [])
 
-export const ClosingText = tw.span`mt-4 block text-center`
+export const ClosingText = tw.span`
+	my-4 text-center
+	md:col-span-full
+`

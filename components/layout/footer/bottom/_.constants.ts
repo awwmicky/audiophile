@@ -4,7 +4,7 @@ import { InfoIcon, TechIcon } from '@/components/blocks'
 // 	brand_name: 'Frisko Wave',
 // }
 
-export const content = {
+export const contentBottom = {
 	text: {
 		moreInfo: 'For more info',
 		techUsed: 'Technologies used',

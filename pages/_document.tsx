@@ -1,6 +1,6 @@
 import { Children } from 'react'
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
-// import { CssBaseline } from '@nextui-org/react'
+import { CssBaseline } from '@nextui-org/react'
 import { ServerStyleSheet } from 'styled-components'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -66,7 +66,7 @@ class Documents extends Document {
       <Html lang="en">
 				<title>{ meta.title }</title>
         <Head>
-          {/* { CssBaseline.flush() } */}
+          { CssBaseline.flush() }
 
 					{/* <meta charset="utf-8" /> */}
 					{/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
@@ -85,7 +85,8 @@ class Documents extends Document {
 						rel="preload"
 						type="font/ttf"
 						as="font"
-						href="/assets/Manrope-Regular.ttf"
+						href="/assets/fonts/Manrope-VariableFont_wght.ttf"
+						// href="/assets/fonts/Manrope-Regular.ttf"
 						crossOrigin="anonymous"
 					/>
         </Head>

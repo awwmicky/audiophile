@@ -1,7 +1,9 @@
 import { RootLayer } from '@/components/layout'
 
 const IndexPage = () => (
-	<RootLayer>Home Page</RootLayer>
+	<RootLayer>
+		<h1>Home Page</h1>
+	</RootLayer>
 )
 
 export default IndexPage

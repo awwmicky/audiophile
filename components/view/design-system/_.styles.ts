@@ -16,7 +16,7 @@ export const VariantTitle = tw.p`capitalize font-bold`
 
 export const ActionTitle = tw.p`capitalize opacity-50`
 
-export const No = tw.span`mr-6 text-[#D87D4A]`
+export const No = tw.span`mr-6 text-accent-1`
 
 /* LAYOUT */
 
@@ -42,7 +42,7 @@ export const ColorGrid = tw.div`
 `
 
 export const TypeFlex = tw.div`
-	p-14 flex gap-4 flex-wrap bg-[#F1F1F1] rounded-lg lg:[&>*]:flex-1
+	p-14 flex gap-4 flex-wrap bg-dominant-3 rounded-lg lg:[&>*]:flex-1
 `
 
 export const TypeGrid = tw.div`
@@ -70,11 +70,11 @@ export const Val = tw.span`opacity-50 font-normal pr-8`
 
 /* TYPOGRAPHY */
 
-export const TypeName = tw.p`font-body text-4xl uppercase font-bold`
+export const TypeName = tw.p`font-default text-4xl uppercase font-bold`
 
 export const TypeAlphabet = tw.p`
 	inline-flex flex-col
-	font-body text-xl font-bold opacity-50
+	font-default text-xl font-bold opacity-50
 
 `
 
@@ -82,7 +82,7 @@ export const TypeSpecs = tw.p`opacity-50`
 
 type PTypeSample = { variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'overline' | 'subtitle' | 'body' }
 export const TypeSample = styled('p')<PTypeSample>(({ variant }) => [
-	tw`font-body break-words`,
+	tw`font-default break-words`,
 	(variant === 'h1') && tw`
 		text-6xl font-bold
 		uppercase leading-[58px] tracking-[2px]
@@ -108,11 +108,11 @@ export const TypeSample = styled('p')<PTypeSample>(({ variant }) => [
 		uppercase leading-[24px] tracking-[1.3px]
 	`,
 	(variant === 'overline') && tw`
-		text-[#D87D4A] text-sm
+		text-accent-1 text-sm
 		uppercase leading-[19px] tracking-[10px]
 	`,
 	(variant === 'subtitle') && tw`
-		text-[#D87D4A] text-xs font-bold
+		text-accent-1 text-xs font-bold
 		uppercase leading-[25px] tracking-[1px]
 	`,
 ])
@@ -126,9 +126,9 @@ type PButton = {
 export const Button = styled('button')<PButton>(({ variant, action }) => [
 	tw`rounded-sm text-xs uppercase font-bold cursor-pointer`,
 	(variant === 'filled') && tw`
-		p-[1em 2em] bg-[#D87D4A] text-white
+		p-[1em 2em] bg-accent-1 text-white
 	`,
-	(variant === 'filled' && action === 'hover') && tw`bg-[#FBAF85]`,
+	(variant === 'filled' && action === 'hover') && tw`bg-accent-2`,
 	(variant === 'filled' && action === 'active') && tw``,
 	(variant === 'filled' && action === 'loading') && tw`
 		relative text-transparent opacity-50 cursor-wait
@@ -151,7 +151,7 @@ export const Button = styled('button')<PButton>(({ variant, action }) => [
 		text-black opacity-50 relative
 		after:(content-['>'] absolute! left-[125%])
 	`,
-	(variant === 'subtle' && action === 'hover') && tw`after:left-[150%] text-[#D87D4A] opacity-100`,
+	(variant === 'subtle' && action === 'hover') && tw`after:left-[150%] text-accent-1 opacity-100`,
 	(variant === 'subtle' && action === 'active') && tw``,
 	(variant === 'subtle' && action === 'loading') && tw`
 		relative text-transparent opacity-20 cursor-wait
@@ -178,9 +178,9 @@ const TextFieldInputAttr = ({ action }: PInputField) => ({
 const TextFieldInputStyle = ({ action }: PInputField) => [
 	tw`
 		p-[1em 2em] w-full text-sm font-bold
-		border border-[#CFCFCF] rounded-lg outline-none
+		border border-dominant-4 rounded-lg outline-none
 	`,
-	(action === 'active') && tw`border-[#D87D4A] caret-[#D87D4A]`,
+	(action === 'active') && tw`border-accent-1 caret-accent-1`,
 	(action === 'error') && tw`border-red-500 [&~*]:text-red-500`,
 	(action === 'disabled') && tw`bg-gray-300 opacity-50 cursor-not-allowed!`,
 ]
@@ -208,10 +208,10 @@ const RadioFieldInputAttr = ({ action }: PInputField) => ({
 const RadioFieldInputStyle = ({ action }: PInputField) => [
 	tw`
 		absolute left-6 self-center
-		scale-150 checked:accent-[#D87D4A]
+		scale-150 checked:accent-accent-1
 	`,
 	(action === 'active') && tw``,
-	(action === 'hover') && tw`[&+label]:border-[#D87D4A]`,
+	(action === 'hover') && tw`[&+label]:border-accent-1`,
 	(action === 'disabled') && tw`[&+label]:(bg-gray-300 opacity-50 cursor-not-allowed!)`,
 ]
 
@@ -221,21 +221,19 @@ export const RadioFieldInput = styled('input')
 export const RadioFieldLabel = tw.label`
 	p-[1em 2em 1em 4em] w-full
 	text-sm font-bold text-left cursor-pointer
-	border border-[#CFCFCF] rounded-lg
-	peer-checked:border-[#D87D4A]
+	border border-dominant-4 rounded-lg
+	peer-checked:border-accent-1
 `
 
 /*  */
 
 export const CounterFieldBox = styled('div')<PInputField>(({ action }) => [
 	tw`
-		flex
-		w-[150px] [&>*]:w-1/3 bg-[#F1F1F1]
-		border border-transparent rounded-lg
-		overflow-hidden
+		flex w-[150px] [&>*]:w-1/3 bg-dominant-3
+		border border-transparent rounded-lg overflow-hidden
 	`,
-	(action === 'active') && tw`[&>input]:(border border-[#D87D4A] rounded-lg caret-[#D87D4A])`,
-	(action === 'hover') && tw`[&>button]:text-[#D87D4A]`,
+	(action === 'active') && tw`[&>input]:(border border-accent-1 rounded-lg caret-accent-1)`,
+	(action === 'hover') && tw`[&>button]:text-accent-1`,
 	(action === 'disabled') && tw`bg-gray-300 [&>*]:(opacity-20 cursor-not-allowed!)`,
 ])
 

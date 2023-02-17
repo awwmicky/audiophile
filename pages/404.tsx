@@ -1,9 +1,9 @@
+import { Layer } from '@/components/layout'
 
 const ErrorPage = () => (
-	<div>
+	<Layer className="my-10">
 		<h1>Page Not Found</h1>
-		<button>Go Back</button>
-	</div>
+	</Layer>
 )
 
 export default ErrorPage

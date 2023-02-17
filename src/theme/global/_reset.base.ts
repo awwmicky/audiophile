@@ -1,10 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
+import { theme } from 'twin.macro'
 
 const BaseReset = createGlobalStyle({
-  'html, body': {
+  'html, body, #__next': {
     height: '100%',
   },
-  '#__next': {
+	'body': {
+		font: `${ 400 } ${ 0.9375 }rem/${ 25 }px ${ theme`fontFamily.default` }`,
+	},
+  '#__next>div': {
     minHeight: '100%',
     display: 'flex',
     flexFlow: 'column',

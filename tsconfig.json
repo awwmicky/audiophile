@@ -13,7 +13,7 @@
     "noFallthroughCasesInSwitch": true,
     /*  */
     "incremental": true,
-    "declaration": true,
+    "declaration": false, // old: true
     "sourceMap": true,
     /*  */
     "noEmit": true,

@@ -1,7 +1,10 @@
+import { Children } from 'react'
+import * as X from './_.styles'
 
 const content = {
-	image: '/public/assets/images/desktop/image-best-gear.jpg',
-	title: 'Bringing you the best audio gear',
+	image: '/assets/images/desktop/image-best-gear.jpg',
+	// title: 'Bringing you the best audio gear',
+	title: ['Bringing you the ', <span>best</span>, ' audio gear'],
 	description: `
 		Located at the heart of New York City, Audiophile is the
 		premier store for high end headphones, earphones, speakers,
@@ -10,15 +13,17 @@ const content = {
 		a wide range of our products. Stop by our store to meet
 		some of the fantastic people who make Audiophile the best
 		place to buy your portable audio equipment.
-	`
+	`,
 }
 
 const About = () => (
-	<div>
-		<img src={ content.image } alt="about-picture" />
-		<h2>{ content.title }</h2>
-		<p>{ content.description }</p>
-	</div>
+	<X.Frame>
+		<X.Image src={ content.image } alt="about-picture" />
+		<X.Box>
+			<X.Title h2>{ Children.toArray(content.title) }</X.Title>
+			<X.Description base>{ content.description }</X.Description>
+		</X.Box>
+	</X.Frame>
 )
 
 export { About }

@@ -7,7 +7,7 @@ import * as X from './_.styles'
 // FIXME: change Link
 
 const Header = () => (
-	<header className="bg-[#101010] sticky top-0 z-[1]">
+	<header className="bg-[#101010] sticky -top-1 z-[1]">
 		<X.Frame>
 			<X.Logo />
 			<X.Menu />

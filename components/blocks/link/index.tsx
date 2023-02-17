@@ -23,14 +23,11 @@ type SAnchor = Pick<IPLink, 'isActive' | 'isDark'>
 
 const AnchorStyle = ({ isActive, isDark }: SAnchor) => [
 	tw`
-		hover:text-[#D87D4A]
-		font-default text-sm font-bold uppercase leading-[25px]! tracking-[2px]
+	font-default text-sm font-bold uppercase leading-[25px]! tracking-[2px]
+	hover:text-accent-1
 	`,
-	isDark && tw`
-		(text-white  active:text-white bg-black)
-		// [&>*]:(text-white active:text-white bg-black)
-	`,
-	isActive && tw`text-[#D87D4A]`,
+	isDark && tw`(text-white  active:text-white bg-black)`,
+	isActive && tw`text-accent-1`,
 ]
 
 export const Anchor = styled('a')(AnchorStyle)

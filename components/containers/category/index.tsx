@@ -1,22 +1,24 @@
 import { Children } from 'react'
 import { path } from '@/src'
+import { Icon } from '@/components/blocks'
+import * as X from './_.styles'
 
 const content = [
-	{ image: '/', title: 'Headphones', link: `${ path.product }/headphone` },
-	{ image: '/', title: 'Speakers', link: `${ path.product }/speakers` },
-	{ image: '/', title: 'Earphones', link: `${ path.product }/earphones` },
+	{ title: 'Headphones',	image: '/assets/images/desktop/image-category-thumbnail-headphones.png',	link: '/' /* `${ path.product }/headphone` */ },
+	{ title: 'Speakers',		image: '/assets/images/desktop/image-category-thumbnail-speakers.png',		link: '/' /* `${ path.product }/speakers` */ },
+	{ title: 'Earphones',		image: '/assets/images/desktop/image-category-thumbnail-earphones.png',		link: '/' /* `${ path.product }/earphones` */ },
 ]
 
 const Category = () => (
-	<div>
+	<X.Frame>
 		{ Children.toArray(content.map((item) => (
-			<div>
-				<img src={ item.image } alt={`Category-${ item.title }`} />
-				<p>{ item.title }</p>
-				<a href={ item.link }>shop</a>
-			</div>
+			<X.Card href={ item.link }>
+				<X.Image src={ item.image } alt={`Category-${ item.title }`} />
+				<X.Category base>{ item.title }</X.Category>
+				<X.Button>shop <Icon.RightArrow /></X.Button>
+			</X.Card>
 		))) }
-	</div>
+	</X.Frame>
 )
 
 export { Category }

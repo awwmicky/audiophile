@@ -6,6 +6,10 @@ import type { SVGProps } from 'react'
 // } from 'react-loading-icons'
 
 import {
+	BiChevronRight,
+} from 'react-icons/bi'
+
+import {
 	GiHamburgerMenu,
 } from 'react-icons/gi'
 
@@ -29,6 +33,7 @@ type IProps = SVGProps<SVGElement>
 
 export const Menu = (props: IProps) => <GiHamburgerMenu size={25} { ...props } />
 export const Cart = (props: IProps) => <AiOutlineShoppingCart size={25} { ...props } />
+export const RightArrow = (props: IProps) => <BiChevronRight size={25} { ...props } />
 
 export const Logo = (props: any) => (
 	<svg { ...props } width="143" height="25" viewBox="0 0 143 25" fill="none" xmlns="http://www.w3.org/2000/svg">

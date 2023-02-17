@@ -16,8 +16,8 @@ const Top = () => (
 				))) }
 			</X.MenuList>
 
-			<X.ClosingText>{ contentTop.closing_text }</X.ClosingText>
-			<X.Copyright>{ contentTop.copyright }</X.Copyright>
+			<X.ClosingText base>{ contentTop.closing_text }</X.ClosingText>
+			<X.Copyright base>{ contentTop.copyright }</X.Copyright>
 
 			<X.SocialList>
 				{ Children.toArray(contentTop.social_links.map((item) => (

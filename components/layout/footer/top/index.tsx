@@ -1,7 +1,6 @@
-import NextLink from 'next/link'
 import { Children } from 'react'
-import { Link } from '@nextui-org/react'
-import { Icon } from '@/components/blocks'
+import { Icon, Link } from '@/components/blocks'
+import { paths_nav } from '@/src'
 import { contentTop } from './_.constants'
 import * as X from './_.styles'
 
@@ -12,17 +11,17 @@ const Top = () => (
 			<Icon.Logo />
 
 			<X.MenuList>
-				{ Children.toArray(contentTop.menu_links.map((item) => (
-					<li><NextLink href={ item.link }>{ item.label }</NextLink></li>
+				{ Children.toArray(paths_nav.map((item) => (
+					<li><Link isDark href={ item.link }>{ item.label }</Link></li>
 				))) }
 			</X.MenuList>
 
-			<X.Text>{ contentTop.closing_text }</X.Text>
+			<X.ClosingText>{ contentTop.closing_text }</X.ClosingText>
 			<X.Copyright>{ contentTop.copyright }</X.Copyright>
 
 			<X.SocialList>
 				{ Children.toArray(contentTop.social_links.map((item) => (
-					<li><Link href={ item.link }>{ item.icon() }</Link></li>
+					<li><Link isDark href={ item.link }>{ item.icon() }</Link></li>
 				))) }
 			</X.SocialList>
 		</X.Frame>

@@ -1,13 +1,6 @@
 import { InfoIcon } from '@/components/blocks'
 
 export const contentTop = {
-	menu_links: [
-		{ label: 'Home',				link: '/' },
-		{ label: 'Headphones',	link: '/category/headphones' },
-		{ label: 'Speakers',		link: '/category/speakers' },
-		{ label: 'Earphones',		link: '/category/earphones' },
-	],
-
 	closing_text: `
 		Audiophile is an all in one stop to fulfill your audio needs.
 		We're a small team of music lovers and sound specialists who

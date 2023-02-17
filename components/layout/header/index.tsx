@@ -1,12 +1,10 @@
+import { useRouter } from 'next/router'
 import { Children } from 'react'
+import { Link } from '@/components/blocks'
+import { paths_nav } from '@/src'
 import * as X from './_.styles'
 
-const paths = [
-	{ label: 'home', link: '/' },
-	{ label: 'headphones', link: '/category/headphones' },
-	{ label: 'speakers', link: '/category/speakers' },
-	{ label: 'earphones', link: '/category/earphones' },
-]
+// FIXME: change Link
 
 const Header = () => (
 	<header className="bg-[#101010] sticky top-0 z-[1]">
@@ -19,12 +17,22 @@ const Header = () => (
 	</header>
 )
 
-const NavBar = () => (
-	<X.NavMenu>
-		{ Children.toArray(paths.map((item) => (
-			<X.NavLink href={ item.link }>{ item.label }</X.NavLink>
-		))) }
-	</X.NavMenu>
-)
+const NavBar = () => {
+	const activePath = useRouter().pathname
+
+	return (
+		<X.NavMenu>
+			{ Children.toArray(paths_nav.map((item) => (
+				<Link
+					isActive={ activePath === item.link }
+					isDark
+					passHref
+					href={ item.link }
+				>{ item.label }
+				</Link>
+			))) }
+		</X.NavMenu>
+	)
+}
 
 export { Header }

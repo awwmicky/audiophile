@@ -1,28 +1,27 @@
 import { Children } from 'react'
-// import { Layer } from '@/components/layout'
+import { Link } from '@/components/blocks'
 import { contentBottom } from './_.constants'
 import * as X from './_.styles'
 
 const Bottom = () => (
-		<div className="bg-[#101010]/75">
+	<div className="bg-[#101010]/40">
 		<X.Frame>
-			{/* <X.Grid> */}
 				<X.Group>
-					<X.Title text={ contentBottom.text.techUsed } />
+					<X.Title>{ contentBottom.text.techUsed }</X.Title>
 					<X.List>
 						{ Children.toArray(contentBottom.technologies.map((item) => (
-							<li><X.Link title={ item.title } href={ item.link } open>{ item.icon() }</X.Link></li>
+							<li><Link newTab isDark title={ item.title } href={ item.link }>{ item.icon() }</Link></li>
 						))) }
 					</X.List>
 				</X.Group>
 
 				<X.Group>
-					<X.Title text={ contentBottom.text.moreInfo } />
+					<X.Title>{ contentBottom.text.moreInfo }</X.Title>
 					<X.List>
 						{ Children.toArray(contentBottom.moreInfo.map((item) => (
 							<>
 								{ item.title === 'Repository' && <hr /> }
-								<li><X.Link title={ item.title } href={ item.link } open>{ item.icon() }</X.Link></li>
+								<li><Link newTab isDark title={ item.title } href={ item.link }>{ item.icon() }</Link></li>
 							</>
 						))) }
 					</X.List>
@@ -31,7 +30,6 @@ const Bottom = () => (
 				<X.ClosingText>
 					<code>{ contentBottom.text.madeBy }</code>
 				</X.ClosingText>
-			{/* </X.Grid> */}
 		</X.Frame>
 	</div>
 )

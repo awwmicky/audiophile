@@ -1,5 +1,5 @@
 import tw from 'twin.macro'
-import { Layer } from '../..'
+import { Layer } from '../../layout'
 import { Title as UITitle, Text as UIText } from '@/components/blocks'
 
 export const Frame = tw(Layer)`

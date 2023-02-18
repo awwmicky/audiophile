@@ -2,9 +2,9 @@ import { Text as UIText } from '@nextui-org/react'
 import tw, { styled } from 'twin.macro'
 
 interface IPText {
-	overline?: boolean
-	subtitle?: boolean
-	base?: boolean
+	overline?: 'true' | 'false' | boolean
+	subtitle?: 'true' | 'false' | boolean
+	base?: 'true' | 'false' | boolean
 }
 
 export const Title = styled(UIText)<IPText>((props) => [

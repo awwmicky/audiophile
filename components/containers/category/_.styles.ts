@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import tw from 'twin.macro'
-import { Layer } from '../../'
+import { Layer } from '../../layout'
 import { Text } from '@/components/blocks'
 
 export const Frame = tw(Layer)`
@@ -11,17 +11,13 @@ export const Frame = tw(Layer)`
 
 export const Card = tw(NextLink)`
 	relative p-6 pt-24 w-full
-	flex gap-4 flex-col place-items-center
+	flex gap-1 flex-col place-items-center
 	bg-dominant-3 rounded-lg
 	hover:[&>button]:text-accent-1
 `
 
 export const Image = tw.img`
 	absolute -top-[35%] max-w-[175px]
-`
-
-export const Box = tw.div`
-	flex gap-4 flex-col place-items-center
 `
 
 export const Category = tw(Text)`

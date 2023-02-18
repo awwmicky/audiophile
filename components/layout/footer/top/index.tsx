@@ -5,7 +5,7 @@ import { contentTop } from './_.constants'
 import * as X from './_.styles'
 
 const Top = () => (
-	<div className="bg-[#101010]">
+	<div className="bg-complement-2">
 		<X.Frame>
 			<X.TopLine />
 			<Icon.Logo />

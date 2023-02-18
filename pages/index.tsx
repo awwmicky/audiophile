@@ -4,7 +4,7 @@ import { About, Category } from '@/components/containers'
 
 const IndexPage = () => (
 	<RootLayer>
-		<h1 className="text-center">Home Page</h1>
+		{/* <h1 className="text-center">Home Page</h1> */}
 		<Hero />
 		<Category />
 		{/* <Product /> */}

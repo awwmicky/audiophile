@@ -17,7 +17,7 @@ export const Card = tw(NextLink)`
 `
 
 export const Image = tw.img`
-	absolute -top-[35%] max-w-[175px]
+	absolute -top-[35%] max-w-[175px] pointer-events-none
 `
 
 export const Category = tw(Text)`

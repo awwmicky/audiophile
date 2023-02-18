@@ -22,6 +22,7 @@ const theme = {
 			complement: {
 				1: 'hsl(0, 0%, 0%)',
 				2: 'hsl( 0, 0%, 6%)',
+				3: '	hsl(0, 0%, 10%)',
 			},
 			accent: {
 				1: 'hsl(22, 65%, 57%)',

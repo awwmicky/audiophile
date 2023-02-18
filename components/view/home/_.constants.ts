@@ -9,7 +9,7 @@ export const hero_content_temp = {
 		build quality made for the passionate music enthusiast.
 	`,
 	link: '#',
-	image: '/assets/images/desktop/image-xx99-mark-two-headphones.jpg',
+	image: '/assets/images/hero-image.png',
 }
 
 export const product_content_temp = {

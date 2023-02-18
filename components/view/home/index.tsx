@@ -1,14 +1,15 @@
+import { LinkButton } from '../../'
 import { btn_text, hero_content_temp, product_content_temp } from './_.constants'
 import * as X from './_.styles'
 
 export const Hero = () => (
-	<div className="bg-black">
+	<div className="bg-complement-3">
 		<X.FrameHero>
 			<X.HeroCopy>
 				<X.Overline overline="true">{ hero_content_temp.overline }</X.Overline>
 				<X.Headline h1>{ hero_content_temp.title }</X.Headline>
 				<X.Detail base="true">{ hero_content_temp.description }</X.Detail>
-				{/* <a href={ hero_content_temp.link }>{ btn_text }</a> */}
+				<LinkButton variant="filled">{ btn_text }</LinkButton>
 			</X.HeroCopy>
 			<X.HeroImage src={ hero_content_temp.image } alt="Product-Hightlight" />
 		</X.FrameHero>

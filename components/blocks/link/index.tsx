@@ -76,7 +76,7 @@ Link.displayName = 'Link'
 type SButton = {
 	variant?: 'filled' | 'outline' | 'subtle'
 	disabled?: boolean
-	loading?: 'true' | 'false' | boolean
+	loading?: 'true' | 'false'
 }
 
 const ButtonStyle = ({ variant, ...props }: SButton) => [
@@ -88,13 +88,6 @@ const ButtonStyle = ({ variant, ...props }: SButton) => [
 		hover:bg-gray-400!
 		active:bg-gray-300!
 		disabled:(opacity-50 cursor-not-allowed)
-	`,
-
-	(props.loading) && tw`
-		disabled:(opacity-50 cursor-wait)
-		[& #text]:text-transparent
-		relative [& #loading]:(absolute text-black)
-		[& #icon]:hidden
 	`,
 
 	(variant === 'filled') && tw`
@@ -120,6 +113,13 @@ const ButtonStyle = ({ variant, ...props }: SButton) => [
 		active:[& #icon]:right-10
 		disabled:opacity-20
 	`,
+
+	(props.loading) && tw`
+		disabled:(opacity-50 cursor-wait)
+		[& #text]:text-transparent
+		relative [& #loading]:(absolute text-black)
+		[& #icon]:hidden
+	`,
 ]
 
 const Button = styled(UIButton)<SButton>(ButtonStyle)
@@ -134,7 +134,7 @@ interface IPLinkButton extends TButton {
 export const LinkButton: FCC<IPLinkButton> = ({
 	children, label, variant, disabled, loading, ...rest
 }) => (
-	<Button variant={ variant } disabled={ disabled }>
+	<Button variant={ variant } disabled={ disabled } loading={ loading }>
 		<b id="text">{ children ?? label }</b>
 		{ (variant === 'subtle') && <Icon.RightArrow id="icon" />}
 		{ loading && <Icon.Loading id="loading" /> }

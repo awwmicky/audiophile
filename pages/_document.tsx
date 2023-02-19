@@ -51,6 +51,7 @@ class Documents extends Document {
         ...initialProps,
         styles: Children.toArray(
           <>
+						{ CssBaseline.flush() }
             { initialProps.styles }
             { sheet.getStyleElement() }
           </>
@@ -66,8 +67,6 @@ class Documents extends Document {
       <Html lang="en">
 				<title>{ meta.title }</title>
         <Head>
-          { CssBaseline.flush() }
-
 					{/* <meta charset="utf-8" /> */}
 					{/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 					<meta name="description" content={ meta.description } />

@@ -1,5 +1,5 @@
 export const content = {
-	image: '/assets/images/desktop/image-best-gear.jpg',
+	image: '/assets/images/shared/desktop/image-best-gear.jpg',
 	// title: 'Bringing you the best audio gear',
 	title: ['Bringing you the ', <span>best</span>, ' audio gear'],
 	description: `

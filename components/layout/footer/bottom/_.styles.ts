@@ -5,8 +5,6 @@ export const Frame = tw(Layer)`
 	grid md:grid-cols-2
 `
 
-export const Group = tw.div``
-
 export const Title = tw.p`
 	text-white font-bold text-center
 `
@@ -18,4 +16,5 @@ export const List = tw.ul`
 
 export const ClosingText = tw.span`
 	my-4 text-center md:col-span-full
+	[&>*]:(bg-accent-1/50 text-white)
 `

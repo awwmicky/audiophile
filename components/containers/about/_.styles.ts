@@ -19,11 +19,9 @@ export const Box = tw.div`
 
 export const Title = tw(UITitle)`
 	uppercase [&>span]:text-accent-1
-	max-w-[20ch]
-	lg:max-w-[15ch]
+	max-w-[20ch] lg:max-w-[15ch]
 `
 
 export const Description = tw(UIText)`
-	opacity-50
-	max-w-[66ch]
+	opacity-50 max-w-[66ch]
 `

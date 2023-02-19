@@ -1,3 +1,4 @@
+import { path } from '@/src/_path.routes'
 
 export const btn_text = 'see product'
 
@@ -9,33 +10,33 @@ export const hero_content_temp = {
 		build quality made for the passionate music enthusiast.
 	`,
 	link: '#',
-	image: '/assets/images/hero-image.png',
+	image: '/assets/images/hero-image.jpg',
 }
 
 export const product_content_temp = {
 	_1: {
 		id: 1,
-		image: '/',
 		name: 'ZX9 Speaker',
 		detail: `
 			Upgrade to premium speakers that are phenomenally
 			built to deliver truly remarkable sound.
 		`,
-		link: '#',
-		btn_variant: 'filled-1',
+		image: '/assets/images/home/desktop/image-speaker-zx9.png',
+		link: `${ path.product }/[_model-id_]`,
+		btn_variant: 'filled-alt',
 	},
 	_2: {
 		id: 2,
-		image: '/',
 		name: 'ZX7 Speaker',
-		link: '#',
+		image: '/assets/images/home/desktop/image-speaker-zx7.jpg',
+		link: `${ path.product }/[_model-id_]`,
 		btn_variant: 'outline',
 	},
 	_3: {
 		id: 3,
-		image: '/',
 		name: 'YX1 EARPHONES',
-		link: '#',
+		image: '/assets/images/home/desktop/image-earphones-yx1.jpg',
+		link: `${ path.product }/[_model-id_]`,
 		btn_variant: 'outline',
 	},
 }

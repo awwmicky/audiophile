@@ -1,4 +1,5 @@
-import { LinkButton } from '../../'
+import NextLink from 'next/link'
+import { Button } from '@/components/blocks'
 import { btn_text, hero_content_temp, product_content_temp } from './_.constants'
 import * as X from './_.styles'
 
@@ -6,10 +7,10 @@ export const Hero = () => (
 	<div className="bg-complement-3">
 		<X.FrameHero>
 			<X.HeroCopy>
-				<X.Overline overline="true">{ hero_content_temp.overline }</X.Overline>
-				<X.Headline h1>{ hero_content_temp.title }</X.Headline>
-				<X.Detail base="true">{ hero_content_temp.description }</X.Detail>
-				<LinkButton variant="filled">{ btn_text }</LinkButton>
+				<X.HeroOverline overline="true" mode="light">{ hero_content_temp.overline }</X.HeroOverline>
+				<X.HeroHeadline h1 mode="light">{ hero_content_temp.title }</X.HeroHeadline>
+				<X.HeroDetail base="true" mode="light">{ hero_content_temp.description }</X.HeroDetail>
+				<Button variant="filled" label={ btn_text } />
 			</X.HeroCopy>
 			<X.HeroImage src={ hero_content_temp.image } alt="Product-Hightlight" />
 		</X.FrameHero>
@@ -17,25 +18,39 @@ export const Hero = () => (
 )
 
 export const Product = () => (
-	<section>
-		<div data-box="1">
-			<img src={ product_content_temp._1.image } alt="product-1" />
-			<h3>{ product_content_temp._1.name }</h3>
-			<a href={ product_content_temp._1.link }>{ btn_text }</a>
-		</div>
+	<X.FrameProduct>
+		<X.ProductCard theme="1">
+			<X.ProductCard theme="1a">
+				<X.ProductImage src={ product_content_temp._1.image } alt="product-1" />
+				{/* <img src="" alt="background" /> */}
+			</X.ProductCard>
+			<X.ProductCard theme="1b">
+				<X.ProductTitle h2 mode="light">{ product_content_temp._1.name }</X.ProductTitle>
+				<X.ProductDetail mode="light">{ product_content_temp._1.detail }</X.ProductDetail>
+				<NextLink passHref href={ product_content_temp._1.link }>
+					<Button variant="filled-alt" label={ btn_text } />
+				</NextLink>
+			</X.ProductCard>
+		</X.ProductCard>
 
-		<div data-box="2">
-			<img src={ product_content_temp._2.image } alt="product-2" />
-			<h3>{ product_content_temp._2.name }</h3>
-			<a href={ product_content_temp._2.link }>{ btn_text }</a>
-		</div>
+		<X.ProductCard theme="2">
+			<X.ProductImage src={ product_content_temp._2.image } alt="product-2" />
+			<X.ProductTitle h2>{ product_content_temp._2.name }</X.ProductTitle>
+			<NextLink passHref href={ product_content_temp._2.link }>
+				<Button variant="outline" label={ btn_text } />
+			</NextLink>
+		</X.ProductCard>
 
-		<div data-box="3">
-			<img src={ product_content_temp._3.image } alt="product-3" />
-			<div>
-				<h3>{ product_content_temp._3.name }</h3>
-				<a href={ product_content_temp._3.link }>{ btn_text }</a>
-			</div>
-		</div>
-	</section>
+		<X.ProductCard theme="3">
+			<X.ProductCard theme="3a">
+				<X.ProductImage src={ product_content_temp._3.image } alt="product-3" />
+			</X.ProductCard>
+			<X.ProductCard theme="3b">
+				<X.ProductTitle h2>{ product_content_temp._3.name }</X.ProductTitle>
+				<NextLink passHref href={ product_content_temp._3.link }>
+					<Button variant="outline" label={ btn_text } />
+				</NextLink>
+			</X.ProductCard>
+		</X.ProductCard>
+	</X.FrameProduct>
 )

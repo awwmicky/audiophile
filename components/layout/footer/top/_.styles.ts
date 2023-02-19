@@ -5,9 +5,8 @@ import { Layer } from '../../layer'
 // FIXME:
 
 export const Frame = tw(Layer)`
-	relative pt-20 pb-12 grid gap-4
-	text-white text-center
-	md:(grid-cols-2 text-start! [&>svg]:place-self-start!)
+	relative pt-20 pb-12 grid gap-4 text-center
+	md:(grid-cols-2 text-start [&>svg]:place-self-start!)
 `
 
 export const TopLine = tw.hr`
@@ -25,13 +24,13 @@ export const MenuList = tw.ul`
 `
 
 export const ClosingText = tw(Text)`
-	text-white opacity-50
+	opacity-50
 	md:[grid-area: 3 / 1 / auto / -1]
 	lg:[grid-area: 2 / 1 / auto / auto]
 `
 
 export const Copyright = tw(Text)`
-	text-white font-bold opacity-50
+	font-bold opacity-50
 	md:[grid-area: 4 / 1 / auto / 2]
 	lg:[grid-area: 3 / 1 / auto / 2]
 `

@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Children } from 'react'
 import { Link } from '@/components/blocks'
@@ -23,13 +24,13 @@ const NavBar = () => {
 	return (
 		<X.NavMenu>
 			{ Children.toArray(paths_nav.map((item) => (
-				<Link
-					isActive={ activePath === item.link }
-					isDark
-					passHref
-					href={ item.link }
-				>{ item.label }
-				</Link>
+				<NextLink passHref legacyBehavior href={ item.link }>
+					<Link
+						mode="light"
+						active={ String(activePath === item.link) as 'true' | 'false' }
+					>{ item.label }
+					</Link>
+				</NextLink>
 			))) }
 		</X.NavMenu>
 	)

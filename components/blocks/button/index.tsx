@@ -1,4 +1,5 @@
 import type { FCC, ButtonHTMLAttributes } from 'react' // HTMLProps
+import { forwardRef } from 'react'
 import { Icon } from '../'
 import { FrameButton, type TButtonStyle } from './_.styles'
 
@@ -7,12 +8,12 @@ interface IPButton extends TButtonAttrs {
 	label?: string
 }
 
-// ref={ ref }
-const Button: FCC<IPButton> = ({
+const Button = forwardRef<HTMLButtonElement, IPButton>(({
 	children, label, variant, disabled, loading,
 	// ...rest
-}) => (
+}, ref) => (
 	<FrameButton
+		ref={ ref }
 		variant={ variant }
 		disabled={ disabled }
 		loading={ loading }
@@ -22,6 +23,8 @@ const Button: FCC<IPButton> = ({
 		{ (variant === 'subtle') && <Icon.RightArrow id="icon" />}
 		{ loading && <Icon.Loading id="loading" /> }
 	</FrameButton>
-)
+))
+
+Button.displayName = 'Button'
 
 export { Button }

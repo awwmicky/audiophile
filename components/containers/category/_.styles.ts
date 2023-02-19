@@ -11,9 +11,10 @@ export const Frame = tw(Layer)`
 
 export const Card = tw(NextLink)`
 	relative p-6 pt-24 w-full
-	flex gap-1 flex-col place-items-center
+	flex gap-4 flex-col place-items-center
 	bg-dominant-3 rounded-lg
-	hover:[&>button]:text-accent-1
+	// hover:([& #icon]:-right-4 [&>:last-child]:text-accent-1)
+	// active:([& #icon]:-right-1 [&>:last-child]:text-black)
 `
 
 export const Image = tw.img`
@@ -22,12 +23,4 @@ export const Image = tw.img`
 
 export const Category = tw(Text)`
 	font-default text-[15px] font-bold uppercase leading-[20px] tracking-[1px]
-`
-
-export const Button = tw.button`
-	relative px-6
-	font-default text-sm font-bold uppercase leading-[18px] tracking-[1px] opacity-50
-	[&>svg]:(absolute -top-1 right-0 text-accent-1)
-	hover:[&>svg]:(-right-3)
-	active:[&>svg]:right-0
 `

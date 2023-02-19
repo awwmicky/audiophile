@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import { Children } from 'react'
 import { Icon, Link } from '@/components/blocks'
 import { paths_nav } from '@/src'
@@ -12,7 +13,11 @@ const Top = () => (
 
 			<X.MenuList>
 				{ Children.toArray(paths_nav.map((item) => (
-					<li><Link isDark href={ item.link }>{ item.label }</Link></li>
+					<li>
+						<NextLink passHref legacyBehavior href={ item.link }>
+							<Link mode="light" href={ item.link }>{ item.label }</Link>
+						</NextLink>
+					</li>
 				))) }
 			</X.MenuList>
 
@@ -21,7 +26,7 @@ const Top = () => (
 
 			<X.SocialList>
 				{ Children.toArray(contentTop.social_links.map((item) => (
-					<li><Link isDark href={ item.link }>{ item.icon() }</Link></li>
+					<li><Link mode="light" href={ item.link }>{ item.icon() }</Link></li>
 				))) }
 			</X.SocialList>
 		</X.Frame>

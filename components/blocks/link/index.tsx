@@ -1,9 +1,10 @@
-import type { FCC, AnchorHTMLAttributes, ReactNode } from 'react' // HTMLProps
+import type { DetailedHTMLProps, AnchorHTMLAttributes, ReactNode } from 'react' // HTMLProps
 import { forwardRef } from 'react'
+import type { AsProp } from '@nextui-org/react'
 import { Icon } from '../'
 import { FrameLink, type TLinkStyle } from './_.styles'
 
-type TAnchor = AnchorHTMLAttributes<HTMLAnchorElement> & TLinkStyle
+type TAnchor = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & TLinkStyle & AsProp
 interface IPLink extends TAnchor {
 	label?: string | ReactNode
 	newTab?: boolean

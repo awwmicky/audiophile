@@ -12,7 +12,7 @@ const Category = () => (
 			<X.Card href={ item.link } className="group">
 				<X.Image src={ item.image } alt={`Category-${ item.title }`} />
 				<X.Category base="true">{ item.title }</X.Category>
-				<Link variant="alt">{ link_text }</Link>
+				<Link as="button" variant="alt">{ link_text }</Link>
 			</X.Card>
 		))) }
 	</X.Frame>

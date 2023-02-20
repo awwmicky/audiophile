@@ -44,17 +44,6 @@ const ButtonStyle = ({ variant, loading }: TButtonStyle) => [
 		[& #loading]:text-white
 	`,
 
-	(variant === 'subtle') && tw`
-		bg-transparent!
-		font-default text-sm font-bold uppercase leading-[18px] tracking-[1px] opacity-50
-		relative [& #icon]:(absolute right-10 text-accent-1!)
-		hover:(bg-transparent! text-accent-1)
-		active:text-black
-		hover:[& #icon]:right-5
-		active:[& #icon]:right-10
-		disabled:opacity-20
-	`,
-
 	(loading === 'true') && tw`
 		[& #text]:text-transparent
 		relative [& #loading]:absolute

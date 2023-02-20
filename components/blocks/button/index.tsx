@@ -1,26 +1,26 @@
-import type { FCC, ButtonHTMLAttributes } from 'react' // HTMLProps
+import type { DetailedHTMLProps, ButtonHTMLAttributes, ReactNode } from 'react' // HTMLProps
 import { forwardRef } from 'react'
+import type { AsProp } from '@nextui-org/react'
 import { Icon } from '../'
 import { FrameButton, type TButtonStyle } from './_.styles'
 
-type TButtonAttrs = ButtonHTMLAttributes<HTMLButtonElement> & TButtonStyle
+type TButtonAttrs = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & TButtonStyle & AsProp
 interface IPButton extends TButtonAttrs {
-	label?: string
+	label?: string | ReactNode
 }
 
 const Button = forwardRef<HTMLButtonElement, IPButton>(({
 	children, label, variant, disabled, loading,
-	// ...rest
+	...rest
 }, ref) => (
 	<FrameButton
 		ref={ ref }
 		variant={ variant }
 		disabled={ disabled }
 		loading={ loading }
-		// { ...rest }
+		{ ...rest }
 	>
-		<b id="text">{ children ?? label }</b>
-		{ (variant === 'subtle') && <Icon.RightArrow id="icon" />}
+		<span id="text">{ children ?? label }</span>
 		{ loading && <Icon.Loading id="loading" /> }
 	</FrameButton>
 ))

@@ -14,9 +14,9 @@ const LinkStyle = ({ variant, mode, active }: TLinkStyle) => [
 	`,
 
 	(variant === 'alt') && tw`
-		px-4 opacity-50
+		px-4 [display: inherit] opacity-50
 		leading-[18px] tracking-[1px]
-		relative [& #icon]:(absolute -right-2 text-accent-1)
+		relative [& #icon]:(absolute -top-1 -right-2 text-accent-1)
 		hover:([& #icon]:-right-4 text-accent-1)
 		active:([& #icon]:-right-1 text-black)
 		group-hover:([& #icon]:-right-4 text-accent-1)

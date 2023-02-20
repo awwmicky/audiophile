@@ -2,8 +2,6 @@ import tw from 'twin.macro'
 import { Text } from '@/components/blocks'
 import { Layer } from '../../layer'
 
-// FIXME:
-
 export const Frame = tw(Layer)`
 	relative pt-20 pb-12 grid gap-4 text-center
 	md:(grid-cols-2 text-start [&>svg]:place-self-start!)

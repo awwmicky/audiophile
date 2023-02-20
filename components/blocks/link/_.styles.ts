@@ -14,13 +14,12 @@ const LinkStyle = ({ variant, mode, active }: TLinkStyle) => [
 	`,
 
 	(variant === 'alt') && tw`
-		px-4 [display: inherit] opacity-50
-		leading-[18px] tracking-[1px]
+		px-4 [display: inherit] leading-[18px] tracking-[1px] opacity-50
 		relative [& #icon]:(absolute -top-1 -right-2 text-accent-1)
 		hover:([& #icon]:-right-4 text-accent-1)
-		active:([& #icon]:-right-1 text-black)
+		active:([& #icon]:-right-2 text-black)
 		group-hover:([& #icon]:-right-4 text-accent-1)
-		group-active:([& #icon]:-right-1 text-black)
+		group-active:([& #icon]:-right-2 text-black)
 	`,
 
 	(mode === 'light') && tw`(text-white  active:text-white)`,

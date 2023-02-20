@@ -1,7 +1,5 @@
 import { path } from '@/src/_path.routes'
 
-export const btn_text = 'see product'
-
 export const hero_content_temp = {
 	overline: 'new product',
 	title: 'XX99 Mark II Headphones',

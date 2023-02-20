@@ -7,8 +7,9 @@ export const hero_content_temp = {
 		Experience natural, lifelike audio and exceptional
 		build quality made for the passionate music enthusiast.
 	`,
-	link: '#',
+	link: `${ path.product }/[_model-id_]`,
 	image: '/assets/images/hero-image.jpg',
+	btn_variant: 'filled',
 }
 
 export const product_content_temp = {

@@ -2,7 +2,7 @@ import { path } from '@/src/_path.routes'
 
 export const hero_content_temp = {
 	overline: 'new product',
-	title: 'XX99 Mark II Headphones',
+	title: 'XX99 Mark II\nHeadphones',
 	description: `
 		Experience natural, lifelike audio and exceptional
 		build quality made for the passionate music enthusiast.
@@ -15,7 +15,7 @@ export const hero_content_temp = {
 export const product_content_temp = {
 	_1: {
 		id: 1,
-		name: 'ZX9 Speaker',
+		name: 'ZX9\nSpeaker',
 		detail: `
 			Upgrade to premium speakers that are phenomenally
 			built to deliver truly remarkable sound.

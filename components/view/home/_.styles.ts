@@ -1,22 +1,19 @@
-
 import tw, { styled } from 'twin.macro'
 import { Layer } from '@/components/layout'
-import { Text, Title } from '@/components/blocks'
+import { Text } from '@/components/blocks'
 
 export const FrameHero = tw(Layer)`
 	relative py-28
 	lg:(py-8 flex gap-6 place-content-between)
 `
 
-export const HeroCopy = tw.div`
-	relative z-[1] py-6 text-center
+export const HeroContent = tw.div`
+	relative z-[1] py-6 text-center [&>h1]:whitespace-pre-line
 	flex gap-6 flex-col place-content-center place-items-center
 	lg:(place-items-start text-start)
 `
 
 export const HeroOverline = tw(Text)`opacity-50`
-
-export const HeroHeadline = tw(Title)`max-w-[12ch]`
 
 export const HeroDetail = tw(Text)`opacity-75 w-[37ch] max-w-full`
 
@@ -51,7 +48,7 @@ export const ProductCard = styled('div')<TProductCardStyle>(({ theme }) => [
 	(theme === '1b') && tw`
 		// px-6 py-10
 		flex gap-6 flex-col place-items-center
-		text-center [&>h2]:max-w-[7ch]
+		text-center [&>h2]:whitespace-pre-line
 		lg:(pl-24 text-start place-items-start)
 	`,
 	(theme === '2') && tw`
@@ -78,7 +75,5 @@ export const ProductCard = styled('div')<TProductCardStyle>(({ theme }) => [
 ])
 
 export const ProductImage = tw.img``
-
-export const ProductTitle = tw(Title)``
 
 export const ProductDetail = tw(Text)`opacity-75 w-[35ch] max-w-full`

@@ -51,8 +51,8 @@ class Documents extends Document {
         ...initialProps,
         styles: Children.toArray(
           <>
-						{ CssBaseline.flush() }
             { initialProps.styles }
+						{ CssBaseline.flush() }
             { sheet.getStyleElement() }
           </>
         ),

@@ -10,7 +10,7 @@ export type TLinkStyle = {
 const LinkStyle = ({ variant, mode, active }: TLinkStyle) => [
 	tw`
 		font-default text-sm font-bold uppercase leading-[25px] tracking-[2px]
-		hover:text-accent-1 active:text-black
+		text-black hover:text-accent-1 active:text-black
 	`,
 
 	(variant === 'alt') && tw`

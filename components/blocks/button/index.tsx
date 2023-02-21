@@ -15,8 +15,10 @@ const Button = forwardRef<HTMLButtonElement, IPButton>(({
 }, ref) => (
 	<FrameButton
 		ref={ ref }
+		auto
+		// color="default"
 		variant={ variant }
-		disabled={ disabled }
+		disabled={ loading || disabled }
 		loading={ loading }
 		{ ...rest }
 	>

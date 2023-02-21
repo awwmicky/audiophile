@@ -5,6 +5,8 @@ import { Link } from '@/components/blocks'
 import { paths_nav } from '@/src'
 import * as X from './_.styles'
 
+// FIXME: convert (Logo, Menu, Cart) w/ Link || Button
+
 const Header = () => (
 	<header className="bg-complement-3 sticky -top-1 z-[10]">
 		<X.Frame>

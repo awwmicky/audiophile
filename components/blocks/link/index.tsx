@@ -4,8 +4,8 @@ import type { AsProp } from '@nextui-org/react'
 import { Icon } from '../'
 import { FrameLink, type TLinkStyle } from './_.styles'
 
-type TAnchor = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & TLinkStyle & AsProp
-interface IPLink extends TAnchor {
+type TLinkAttrs = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & TLinkStyle & AsProp
+interface IPLink extends TLinkAttrs {
 	label?: string | ReactNode
 	newTab?: boolean
 }
@@ -20,7 +20,7 @@ const Link = forwardRef<HTMLAnchorElement, IPLink>(({
 			target: '_blank',
 			rel: 'noreferrer noopener',
 		}}
-		color="text"
+		// color="text"
 		variant={ variant }
 		mode={ mode }
 		active={ active }

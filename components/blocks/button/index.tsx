@@ -9,6 +9,8 @@ interface IPButton extends TButtonAttrs {
 	label?: string | ReactNode
 }
 
+const DEFAULT_TEXT = 'See product'
+
 const Button = forwardRef<HTMLButtonElement, IPButton>(({
 	children, label, variant, disabled, loading,
 	...rest
@@ -22,7 +24,7 @@ const Button = forwardRef<HTMLButtonElement, IPButton>(({
 		loading={ loading }
 		{ ...rest }
 	>
-		<span id="text">{ children ?? label }</span>
+		<span id="text">{ children ?? label ?? DEFAULT_TEXT }</span>
 		{ loading && <Icon.Loading id="loading" /> }
 	</FrameButton>
 ))

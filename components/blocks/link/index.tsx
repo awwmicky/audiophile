@@ -10,6 +10,8 @@ interface IPLink extends TLinkAttrs {
 	newTab?: boolean
 }
 
+const DEFAULT_TEXT = 'Click here'
+
 const Link = forwardRef<HTMLAnchorElement, IPLink>(({
 	children, label, newTab, variant, mode, active,
 	...rest
@@ -26,7 +28,7 @@ const Link = forwardRef<HTMLAnchorElement, IPLink>(({
 		active={ active }
 		{ ...rest }
 	>
-		{ children ?? label }
+		{ children ?? label ?? DEFAULT_TEXT }
 		{ (variant === 'alt') && <Icon.RightArrow id="icon" />}
 	</FrameLink>
 ))

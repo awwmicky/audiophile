@@ -30,47 +30,57 @@ export const FrameProduct = tw(Layer)`
 	my-28 flex gap-6 flex-col
 `
 
-type TProductCardStyle = { theme: '1' | '1a' | '1b' | '2' | '3' | '3a' | '3b' }
-export const ProductCard = styled('div')<TProductCardStyle>(({ theme }) => [
-	tw`rounded-lg`,
-	(theme === '1') && tw`
+type TProductCardStyle = { order: number }
+export const ProductCard = styled('div')<TProductCardStyle>(({ order }) => [
+	(order === 0) && tw`
 		px-6 py-10
-		bg-accent-1
+		rounded-lg bg-accent-1 overflow-hidden
 		flex gap-6 flex-col place-items-center
-		lg:(flex-row [&>*]:flex-1)
+		[&>*]:data-[image]:(
+			[&>img]:(w-40 pointer-events-none)
+		)
+		[&>*]:data-[content]:(
+			flex gap-6 flex-col place-items-center
+			text-center [&>h2]:whitespace-pre-line
+		)
+		lg:(
+			flex-row [&>*]:flex-1
+			[&>*]:data-[image]:[&>img]:(mx-auto w-72)
+			[&>*]:data-[content]:(
+				pl-24 text-start place-items-start
+			)!
+		)
 	`,
-	(theme === '1a') && tw`
-		mt-10
-		w-40
-		lg:[&>img]:(mx-auto w-72)
-		// mb-8
+
+	(order === 1) && tw`
+		px-6 py-10 h-80
+		rounded-lg bg-dominant-4 overflow-hidden
+		relative [&>*]:data-[image]:(
+			w-full h-full absolute bottom-0 right-0
+			[&>img]:(w-full h-full object-cover pointer-events-none)
+		)
+		[&>*]:data-[content]:(
+			relative w-full h-full
+			flex gap-6 flex-col place-content-center place-items-start
+		)
+		lg:[&>*]:data-[content]:pl-24
 	`,
-	(theme === '1b') && tw`
-		// px-6 py-10
-		flex gap-6 flex-col place-items-center
-		text-center [&>h2]:whitespace-pre-line
-		lg:(pl-24 text-start place-items-start)
-	`,
-	(theme === '2') && tw`
-		px-6 py-10 bg-dominant-4 overflow-hidden
-		flex gap-6 flex-col place-content-center place-items-start
-		relative [&>*]:(relative z-[1])
-		[&>img]:(absolute top-0 right-0 w-full h-full object-cover)
-		lg:(pl-24 py-20 [&>img]:h-auto)
-	`,
-	(theme === '3') && tw`
-		flex gap-6 flex-col [&>*]:flex-1
-		lg:flex-row
-	`,
-	(theme === '3a') && tw`
-		bg-complement-3 overflow-hidden
-		[&>img]:(w-full h-80 object-cover)
-		lg:[&>img]:h-auto
-	`,
-	(theme === '3b') && tw`
-		px-6 py-10 bg-dominant-3
-		flex gap-6 flex-col place-content-center place-items-start
-		lg:pl-24
+
+	(order === 2) && tw`
+		flex gap-6 flex-col
+		[&>*]:(flex-1 rounded-lg)
+		[&>*]:data-[image]:(
+			bg-complement-3 overflow-hidden
+			[&>img]:(w-full h-80 object-cover pointer-events-none)
+		)
+		[&>*]:data-[content]:(
+			px-6 py-10 bg-dominant-3
+			flex gap-6 flex-col place-content-center place-items-start
+		)
+		lg:(
+			flex-row
+			[&>*]:data-[content]:pl-24!
+		)
 	`,
 ])
 

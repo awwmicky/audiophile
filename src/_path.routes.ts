@@ -1,6 +1,12 @@
-export const path = {
+export const root_path = {
 	home: 					'/' as const,
 	product:				'/product' as const,
+	cart: 					'/cart' as const,
+	checkout: 			'/checkout' as const, // ?confirm= success | cancelled
+	design_system: 	'/design-system' as const,
+	error: 					'/*',
+}
+
 	//  (category='', id='') {
 	// 	if (!category) return '/product' as const
 	// 	const modelId = id ?? `/${ id }`
@@ -8,15 +14,10 @@ export const path = {
 	// 		// category = /headphones | /speakers | /earphones
 	// 		// id = (product model)
 	// },
-	cart: 					'/cart' as const,
-	checkout: 			'/checkout' as const, // ?confirm= success | cancelled
-	design_system: 	'/design-system' as const,
-	error: 					'/*',
-}
 
 export const paths_nav = [
-	{ label: 'Home', 				link: path.home },
-	{ label: 'Headphones',	link: `${ path.product }/headphones` as const },
-	{ label: 'Speakers',		link: `${ path.product }/speakers` as const },
-	{ label: 'Earphones',		link: `${ path.product }/earphones` as const },
+	{ label: 'Home', 				link: root_path.home },
+	{ label: 'Headphones',	link: `${ root_path.product }/headphones` as const },
+	{ label: 'Speakers',		link: `${ root_path.product }/speakers` as const },
+	{ label: 'Earphones',		link: `${ root_path.product }/earphones` as const },
 ]

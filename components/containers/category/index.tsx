@@ -1,6 +1,6 @@
 import { Children } from 'react'
 import { Link } from '@/components/blocks'
-// import { path } from '@/src'
+// import { root_path } from '@/src'
 import { content } from './_.constants'
 import * as X from './_.styles'
 

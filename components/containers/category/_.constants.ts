@@ -1,19 +1,19 @@
-import { path } from '@/src'
+import { root_path } from '@/src'
 
 export const content = [
 	{
 		title: 'Headphones',
 		image: '/assets/images/shared/desktop/image-category-thumbnail-headphones.png',
-		link: `${ path.product }/headphones`,
+		link: `${ root_path.product }/headphones`,
 	},
 	{
 		title: 'Speakers',
 		image: '/assets/images/shared/desktop/image-category-thumbnail-speakers.png',
-		link: `${ path.product }/speakers`,
+		link: `${ root_path.product }/speakers`,
 	},
 	{
 		title: 'Earphones',
 		image: '/assets/images/shared/desktop/image-category-thumbnail-earphones.png',
-		link: `${ path.product }/earphones`,
+		link: `${ root_path.product }/earphones`,
 	},
 ]

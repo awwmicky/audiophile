@@ -1,24 +1,22 @@
 import NextLink from 'next/link'
 import { type FCC, Children } from 'react'
-import { Title, Text, Button } from '@/components/blocks'
-import { category_content_temp } from './_.constants'
+import { Title, Button } from '@/components/blocks'
+import { mock_category } from './_.constants'
 import * as X from './_.styles'
 
-interface ICategoryTop {
-	title?: string | string[]
+interface IPCategoryTop {
+	category?: string | string[]
 }
 
-const btn_text = 'See Product'
-
-export const CategoryTop: FCC<ICategoryTop> = ({ title }) => (
+export const CategoryTop: FCC<IPCategoryTop> = ({ category }) => (
 	<X.FrameTop>
-		<Title h1 mode="light">{ title }</Title>
+		<Title h1 mode="light">{ category }</Title>
 	</X.FrameTop>
 )
 
 export const CategoryItem = () => (
 	<X.FrameCategory>
-		{ Children.toArray(category_content_temp.map(((item, index) => (
+		{ Children.toArray(mock_category.map(((item, index) => (
 			<X.Section order={ index }>
 				<X.ImageBox>
 					<X.Image src="/" alt={`Product-${ index }`} />
@@ -31,7 +29,7 @@ export const CategoryItem = () => (
 					<X.Name h2>{ item.name }</X.Name>
 					<X.Detail base="true">{ item.detail }</X.Detail>
 					<NextLink href={ item.link }>
-						<Button variant="filled">{ btn_text }</Button>
+						<Button variant="filled" />
 					</NextLink>
 				</X.ContentBox>
 			</X.Section>

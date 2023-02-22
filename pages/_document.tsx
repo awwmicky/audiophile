@@ -1,17 +1,21 @@
 import { Children } from 'react'
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { CssBaseline } from '@nextui-org/react'
 import { ServerStyleSheet } from 'styled-components'
 
 const isProd = process.env.NODE_ENV === 'production'
 
 const meta = {
-	title: isProd ? 'Audiophile' : '𝚆𝙴𝙱 𝙰𝙿𝙿 | 🐜',
-	description: 'E-Commerce App that sells music products',
-	keywords: 'vercel, typescript, next-js, react, next-ui, tailwindcss, twin-macro, styled-components, framer-motion, zustand, react-hook-form, contentful, stripe',
+	title: isProd ? 'Audiophile | Music E-Commerce' : '𝙳𝙴𝚅 𝙼𝙾𝙳𝙴 | 🐜',
+	description: 'An E-Commerce App that sells music products',
+	keywords: `
+		vercel, typescript, next-js, react,
+		next-ui, radix-ui, tailwindcss, twin-macro, styled-components, framer-motion,
+		zustand, react-hook-form, contentful, stripe
+	`,
 	author: 'Michael Fred Alvarez; @awwmicky',
 	image: isProd ? '/' : '/_',
-	alt: 'audiophile - E-Commerce App',
+	alt: 'Audiophile - E-Commerce App',
 	link: 'https://audiophile-app.vercel.app/',
 }
 
@@ -35,7 +39,16 @@ const altOgContent = [
 	{ name: 'twitter:description', content: meta.description },
 ]
 
-class Documents extends Document {
+const fontImport = {
+	rel: 'preload',
+	type: 'font/ttf',
+	as: 'font',
+	// href: '/assets/fonts/Manrope-Regular.ttf',
+	href: '/assets/fonts/Manrope-VariableFont_wght.ttf',
+	crossOrigin: 'anonymous' as const,
+}
+
+class Document extends NextDocument {
 	static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
@@ -45,7 +58,7 @@ class Documents extends Document {
 				enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
 			})
 
-      const initialProps = await Document.getInitialProps(ctx)
+      const initialProps = await NextDocument.getInitialProps(ctx)
 
       return {
         ...initialProps,
@@ -80,14 +93,7 @@ class Documents extends Document {
 					{ Children.toArray(ogContent.map((item) => <meta { ...item } /> )) }
 					{ Children.toArray(altOgContent.map((item) => <meta { ...item } /> )) }
 
-					<link
-						rel="preload"
-						type="font/ttf"
-						as="font"
-						href="/assets/fonts/Manrope-VariableFont_wght.ttf"
-						// href="/assets/fonts/Manrope-Regular.ttf"
-						crossOrigin="anonymous"
-					/>
+					<link { ...fontImport } />
         </Head>
         <body>
           <Main />
@@ -98,4 +104,4 @@ class Documents extends Document {
   }
 }
 
-export default Documents
+export default Document

@@ -15,6 +15,10 @@ const BaseReset = createGlobalStyle({
   },
   'main': {
     flex: '1 1 auto',
+		display: 'flex',
+    flexFlow: 'column',
+		gap: '7rem',
+		marginBlockEnd: '7rem',
   },
   /*  */
   'input[type=number],\

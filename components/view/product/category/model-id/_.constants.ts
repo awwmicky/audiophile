@@ -4,7 +4,7 @@ export const mock_product = {
 	details: {
 		overline: 'New product',
 		name: 'XX99 Mark II\nHeadphones',
-		details: `
+		detail: `
 			The new XX99 Mark II headphones is the pinnacle of pristine audio.
 			It redefines your premium headphone experience by reproducing
 			the balanced depth and precision of studio-quality sound.
@@ -57,17 +57,17 @@ export const mock_product = {
 			{
 				image: '/',
 				name: 'ZX9 Speaker',
-				link: `${ root_path.product }/speakers`,
+				link: `${ root_path.product }/speakers`, // /model-id
 			},
 			{
 				image: '/',
 				name: 'ZX9 Speaker',
-				link: `${ root_path.product }/speakers`,
+				link: `${ root_path.product }/speakers`, // /model-id
 			},
 			{
 				image: '/',
 				name: 'ZX9 Speaker',
-				link: `${ root_path.product }/speakers`,
+				link: `${ root_path.product }/speakers`, // /model-id
 			},
 		],
 	},

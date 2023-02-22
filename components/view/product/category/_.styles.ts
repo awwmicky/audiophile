@@ -3,20 +3,17 @@ import { Layer } from '@/components/layout'
 import { Text, Title } from '@/components/blocks'
 
 export const FrameTop = tw.div`
-	bg-black
-	h-48 flex [&>*]:m-auto
-	md:h-80
+	bg-black h-48 flex [&>*]:m-auto md:h-80
 `
 
 /*  */
 
 export const FrameCategory = tw(Layer)`
-	py-28 flex gap-32 flex-col
+	mb-8 flex gap-32 flex-col
 `
 
 type TSectionStyle = { order?: number }
 export const Section = styled('section')<TSectionStyle>(({ order }) => [
-	// tw`[&>*]:border`,
 	tw`
 		flex gap-8 flex-col
 		lg:(flex-row [&>*]:flex-1)

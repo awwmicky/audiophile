@@ -9,8 +9,8 @@ export const Hero = () => (
 		<X.FrameHero>
 			<X.HeroContent>
 				<X.HeroOverline overline="true" mode="light">{ mock_hero.overline }</X.HeroOverline>
-				<Title h1 mode="light">{ mock_hero.title }</Title>
-				<X.HeroDetail base="true" mode="light">{ mock_hero.description }</X.HeroDetail>
+				<Title h1 mode="light">{ mock_hero.name }</Title>
+				<X.HeroDetail base="true" mode="light">{ mock_hero.detail }</X.HeroDetail>
 				<NextLink passHref href={ mock_hero.link }>
 					<Button variant="filled" />
 				</NextLink>

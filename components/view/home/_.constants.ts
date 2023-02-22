@@ -2,14 +2,13 @@ import { root_path } from '@/src/_path.routes'
 
 export const mock_hero = {
 	overline: 'New product',
-	title: 'XX99 Mark II\nHeadphones',
-	description: `
+	name: 'XX99 Mark II\nHeadphones',
+	detail: `
 		Experience natural, life-like audio and exceptional
 		build quality made for the passionate music enthusiast.
 	`,
-	link: `${ root_path.product }/headphones`, // /model-id
+	link: `${ root_path.product }/headphones/XX99MIIH`, // /model-id
 	image: '/assets/images/hero-image.jpg',
-	btn_variant: 'filled',
 }
 
 export const mock_product = [

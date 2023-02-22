@@ -2,34 +2,37 @@ import { root_path } from '@/src/_path.routes'
 
 export const mock_category = [
 	{
+		id: 1,
 		overline: 'New Product',
-		name: 'ZX9\nSpeaker',
+		name: 'XX99 Mark II\nHeadphones',
 		detail: `
-			Upgrade your sound system with the all new ZX9 active
-			speaker. It’s a bookshelf speaker system that offers
-			truly wireless connectivity -- creating new possibilities
-			for more pleasing and practical audio setups.
+			The new XX99 Mark II headphones is the pinnacle of
+			pristine audio. It redefines your premium headphone
+			experience by reproducing the balanced depth
+			and precision of studio-quality sound.
 		`,
-		link: `${ root_path.product }/speakers`
+		link: `${ root_path.product }/headphones`, // /model-id
 	},
 	{
-		name: 'ZX9 Speaker',
+		id: 2,
+		name: 'XX99 Mark II Headphones',
 		detail: `
-			Upgrade your sound system with the all new ZX9 active
-			speaker. It’s a bookshelf speaker system that offers
-			truly wireless connectivity -- creating new possibilities
-			for more pleasing and practical audio setups.
+			The new XX99 Mark II headphones is the pinnacle of
+			pristine audio. It redefines your premium headphone
+			experience by reproducing the balanced depth
+			and precision of studio-quality sound.
 		`,
-		link: `${ root_path.product }/speakers`
+		link: `${ root_path.product }/headphones`, // /model-id
 	},
 	{
-		name: 'ZX9 Speaker',
+		id: 3,
+		name: 'XX99 Mark II Headphones',
 		detail: `
-			Upgrade your sound system with the all new ZX9 active
-			speaker. It’s a bookshelf speaker system that offers
-			truly wireless connectivity -- creating new possibilities
-			for more pleasing and practical audio setups.
+			The new XX99 Mark II headphones is the pinnacle of
+			pristine audio. It redefines your premium headphone
+			experience by reproducing the balanced depth
+			and precision of studio-quality sound.
 		`,
-		link: `${ root_path.product }/speakers`
+		link: `${ root_path.product }/headphones`, // /model-id
 	},
 ]

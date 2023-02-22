@@ -1,4 +1,5 @@
 import { type FCC } from 'react'
+import { Counter } from '@/components/shared/field'
 import * as X from './_.styles'
 import { mock_product } from '../../_.constants'
 
@@ -17,8 +18,8 @@ const ProductDetails: FCC<IPProductDetails> = ({ modelId }) => (
 			<h2 data-name>name</h2>
 			<p data-base>detail</p>
 			<span data-price>price</span>
-			<input data-counter type="text" />
-			<pre>model-id :: { modelId }</pre>
+			<Counter value={ 1 } />
+			<small><pre>model-id :: { modelId }</pre></small>
 		</div>
 	</div>
 )

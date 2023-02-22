@@ -3,14 +3,14 @@ import { Layer } from '@/components/layout'
 import { Text } from '@/components/blocks'
 
 export const FrameHero = tw(Layer)`
-	relative py-28
-	lg:(py-8 flex gap-6 place-content-between)
+	relative lg:(py-8 flex gap-6 place-content-between)
 `
 
 export const HeroContent = tw.div`
-	relative z-[1] py-6 text-center [&>h1]:whitespace-pre-line
+	h-[700px]
+	relative z-[1] py-10 text-center [&>h1]:whitespace-pre-line
 	flex gap-6 flex-col place-content-center place-items-center
-	lg:(place-items-start text-start)
+	lg:(h-auto place-items-start text-start)
 `
 
 export const HeroOverline = tw(Text)`opacity-50`
@@ -19,15 +19,15 @@ export const HeroDetail = tw(Text)`opacity-75 w-[37ch] max-w-full`
 
 export const HeroImage = tw.img`
 	absolute inset-0
-	w-auto h-full mx-auto object-cover opacity-40
+	w-full h-full mx-auto object-cover opacity-40
 	pointer-events-none
-	lg:(relative mx-0 w-[40rem] h-auto opacity-100)
+	lg:(static mx-0 w-[40rem] h-auto opacity-100)
 `
 
 /*  */
 
 export const FrameProduct = tw(Layer)`
-	my-28 flex gap-6 flex-col
+	flex gap-6 flex-col
 `
 
 type TProductCardStyle = { order: number }

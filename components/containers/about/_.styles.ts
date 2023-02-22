@@ -3,7 +3,7 @@ import { Layer } from '../../layout'
 import { Title as UITitle, Text as UIText } from '@/components/blocks'
 
 export const Frame = tw(Layer)`
-	my-28	flex gap-10 flex-col place-items-center
+	flex gap-10 flex-col place-items-center
 	lg:(flex-row place-content-between [&>img]:order-2)
 `
 

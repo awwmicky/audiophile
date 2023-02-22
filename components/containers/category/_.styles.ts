@@ -4,13 +4,13 @@ import { Layer } from '../../layout'
 import { Text } from '@/components/blocks'
 
 export const Frame = tw(Layer)`
-	my-28	flex gap-24 flex-col place-items-center
+	flex gap-24 flex-col place-items-center
 	md:(gap-4 flex-row)
 	lg:gap-8
 `
 
 export const Card = tw(NextLink)`
-	relative p-6 pt-24 w-full
+	relative p-6 pt-20 w-full
 	flex gap-4 flex-col place-items-center
 	bg-dominant-3 rounded-lg
 	// hover:([& #icon]:-right-4 [&>:last-child]:text-accent-1)

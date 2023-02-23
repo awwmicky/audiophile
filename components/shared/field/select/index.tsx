@@ -1,49 +1,56 @@
-import type { HTMLAttributes, PropsWithChildren } from 'react'
+import type { FCC, HTMLAttributes, PropsWithChildren } from 'react'
 import { Children, forwardRef } from 'react'
 import * as UISelect from '@radix-ui/react-select'
 import { Icon } from '@/components/blocks'
+import * as X from './_.styles'
 
 // FIXME:
 
-const select_list = [
-	'apple',
-	'banana',
-	'blueberry',
-	'grapes',
-	'pineapple',
-]
+// type TInputAttrs = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+type TSelectAttrs = HTMLAttributes<HTMLElement>
+interface IPSelect extends TSelectAttrs {
+	id?: string
+	label?: string
+	value: string
+	options: Array<{
+		value: string
+		label: string
+	}>
+	errorMessage?: string
+	// disabled?: boolean
+}
 
-const Select = () => (
-  <UISelect.Root>
-    <UISelect.Trigger className="SelectTrigger" aria-label="Food">
-      <UISelect.Value placeholder="Select a fruit…" />
+const Select: FCC<IPSelect> = ({
+	id,
+	label='Label',
+	value, options=[],
+	placeholder='Choose One',
+	// ...rest { ...rest }
+}) => (
+	<div>
+		<X.SelectLabel>{ label }</X.SelectLabel>
+		<UISelect.Root defaultValue={ value ? value : undefined }>
+			<X.SelectTrigger  aria-label={ id }>
+				<UISelect.Value placeholder={ placeholder } />
+				<UISelect.Icon><Icon.DownArrow /></UISelect.Icon>
+			</X.SelectTrigger>
 
-      <UISelect.Icon className="SelectIcon">
-        <Icon.DownArrow />
-      </UISelect.Icon>
-    </UISelect.Trigger>
+			<UISelect.Portal>
+				<X.SelectContent>
+					<UISelect.ScrollUpButton><Icon.UpArrow /></UISelect.ScrollUpButton>
 
-    <UISelect.Portal>
-      <UISelect.Content className="SelectContent">
-        <UISelect.ScrollUpButton className="SelectScrollButton">
-          <Icon.UpArrow />
-        </UISelect.ScrollUpButton>
-
-        <UISelect.Viewport className="SelectViewport">
-          <UISelect.Group>
-            <UISelect.Label className="SelectLabel">Fruits</UISelect.Label>
-						{ Children.toArray(select_list.map((item) => (
-							<SelectItem value={ item }>{ item }</SelectItem>
+					<UISelect.Viewport className="p-2">
+						{/* <UISelect.Label>{ placeholder }</UISelect.Label> */}
+						{ Children.toArray(options.map((item) => (
+							<SelectItem value={ item.value }>{ item.label }</SelectItem>
 						))) }
-          </UISelect.Group>
-        </UISelect.Viewport>
+					</UISelect.Viewport>
 
-        <UISelect.ScrollDownButton className="SelectScrollButton">
-          <Icon.DownArrow />
-        </UISelect.ScrollDownButton>
-      </UISelect.Content>
-    </UISelect.Portal>
-  </UISelect.Root>
+					<UISelect.ScrollDownButton><Icon.DownArrow /></UISelect.ScrollDownButton>
+				</X.SelectContent>
+			</UISelect.Portal>
+		</UISelect.Root>
+	</div>
 )
 
 type TSelectItemAttrs = HTMLAttributes<HTMLDivElement> & PropsWithChildren
@@ -54,12 +61,10 @@ interface IPSelectItem extends TSelectItemAttrs {
 const SelectItem = forwardRef<HTMLDivElement, IPSelectItem>(({
 	children, ...props }, ref
 ) => (
-	<UISelect.Item ref={ ref } { ...props }>
+	<X.SelectItem ref={ ref } { ...props }>
 		<UISelect.ItemText>{ children }</UISelect.ItemText>
-		<UISelect.ItemIndicator className="SelectItemIndicator">
-			<Icon.Check />
-		</UISelect.ItemIndicator>
-	</UISelect.Item>
+		{/* <UISelect.ItemIndicator><Icon.Check /></UISelect.ItemIndicator> */}
+	</X.SelectItem>
 ))
 
 SelectItem.displayName = 'SelectItem'

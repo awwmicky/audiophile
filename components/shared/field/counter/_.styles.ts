@@ -19,8 +19,7 @@ export const FieldButton = tw(Button)`
 `
 
 export const FieldInput = tw(Input)`
-	text-black [&_input]:(text-center) [&>*]:rounded-none
-	focus-within:font-bold
+	text-black [&_input]:(font-bold text-center) [&>*]:rounded-none
 	disabled:bg-red-400!
 	// disabled:opacity-50
 `

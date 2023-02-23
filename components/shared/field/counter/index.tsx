@@ -1,5 +1,6 @@
 import type { FCC, DetailedHTMLProps, HTMLAttributes } from 'react'
 import { useState } from 'react'
+import { Icon } from '@/components/blocks'
 import * as X from './_.styles'
 
 // FIXME:
@@ -32,7 +33,9 @@ const Counter: FCC<IPCounter> = ({
 				auto
 				disabled={ disabled }
 				onClick={ decrement }
-			>-</X.FieldButton>
+			><Icon.Minus />
+			</X.FieldButton>
+
 			<X.FieldInput
 				type="number"
 				id="counter"
@@ -41,11 +44,13 @@ const Counter: FCC<IPCounter> = ({
 				value={ count }
 				aria-label="counter"
 			/>
+
 			<X.FieldButton
 				auto
 				disabled={ disabled }
 				onClick={ increment }
-			>+</X.FieldButton>
+			><Icon.Plus />
+			</X.FieldButton>
 		</X.Field>
 	)
 }

@@ -1,6 +1,6 @@
 export * from './counter'
-export * from './text'
-export * from './radio'
+export * from './input'
+export * from './radios'
 export * from './select'
 
 /*

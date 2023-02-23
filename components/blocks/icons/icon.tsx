@@ -19,8 +19,8 @@ import {
 
 import {
 	AiOutlineShoppingCart,
-  // AiOutlineMinus,
-  // AiOutlinePlus,
+  AiOutlineMinus,
+  AiOutlinePlus,
 } from 'react-icons/ai'
 
 type IPIcons = SVGProps<SVGSVGElement>
@@ -34,8 +34,8 @@ export const Logo = forwardRef<SVGSVGElement, IPIcons>((props, ref) => (
 
 Logo.displayName = 'Logo'
 
-// export const Plus = () => <AiOutlinePlus />
-// export const Minus = () => <AiOutlineMinus />
+export const Plus = (props: IPIcons) => <AiOutlinePlus { ...props } />
+export const Minus = (props: IPIcons) => <AiOutlineMinus { ...props } />
 
 export const Menu = (props: IPIcons) => <GiHamburgerMenu size={25} { ...props } />
 export const Cart = (props: IPIcons) => <AiOutlineShoppingCart size={25} { ...props } />

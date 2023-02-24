@@ -7,7 +7,7 @@ export const SelectLabel = tw.span`
 
 export const SelectTrigger = tw(UISelect.Trigger)`
 	border-2 rounded-md border-gray-400
-	relative px-5 py-2 flex min-w-[22ch] [transition: border var(--nextui-transitions-default)]
+	relative px-5 py-2 flex min-w-[22ch] [transition: 'border' var(--nextui-transitions-default)]
 	[&>*:nth-child(1)]:(font-bold)
 	[&>*:nth-child(2)]:(absolute right-0)
 	data-[placeholder]:(text-gray-400)

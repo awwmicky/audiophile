@@ -1,24 +1,28 @@
 import NextLink from 'next/link'
 import { Children } from 'react'
 import * as X from './_.styles'
+import { Title, Button } from '@/components/blocks'
 import { mock_product } from '../../_.constants'
 
 const ProductRecommended = () => (
-	<div data-layer data-flex data-product-recommended>
-		<h2>you may also like</h2>
-		<div data-card>
-			<div data-card-image>
-				<img src="" alt="" />
-			</div>
+	<X.FrameRecommended>
+		<Title h3>you may also like</Title>
+		<X.List>
+			{ Children.toArray(mock_product.recommended.list.map((item, index) => (
+				<X.Card>
+					<X.ImageBox>
+						<X.Image src="" alt={`Product-${index}`} />
+					</X.ImageBox>
 
-			<div data-card-box>
-				<h3>name</h3>
-				<NextLink href="">
-					<button>see product</button>
-				</NextLink>
-			</div>
-		</div>
-	</div>
+					<Title h4>{ item.name }</Title>
+
+					<NextLink passHref href={ item.link }>
+						<Button variant="filled" />
+					</NextLink>
+				</X.Card>
+			))) }
+		</X.List>
+	</X.FrameRecommended>
 )
 
 export { ProductRecommended }

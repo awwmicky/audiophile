@@ -20,6 +20,12 @@ const BaseReset = createGlobalStyle({
 		gap: '7rem',
 		marginBlockEnd: '7rem',
   },
+	'h1, h2, h3, h4, h5, h6': {
+		margin: '0',
+	},
+	'ul, ol, li': {
+		margin: '0',
+	},
   /*  */
   'input[type=number],\
   input[type=number]::-webkit-outer-spin-button,\

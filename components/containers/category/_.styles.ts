@@ -10,11 +10,9 @@ export const Frame = tw(Layer)`
 `
 
 export const Card = tw(NextLink)`
-	relative p-6 pt-20 w-full
+	relative mt-12 p-6 pt-20 w-full
 	flex gap-4 flex-col place-items-center
 	bg-dominant-3 rounded-lg
-	// hover:([& #icon]:-right-4 [&>:last-child]:text-accent-1)
-	// active:([& #icon]:-right-1 [&>:last-child]:text-black)
 `
 
 export const Image = tw.img`

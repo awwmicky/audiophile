@@ -9,8 +9,9 @@ export const mock_product = {
 			It redefines your premium headphone experience by reproducing
 			the balanced depth and precision of studio-quality sound.
 		`,
-		price: '$ 2,999',
+		price: 2999, // $2,999
 		btn_text: 'Add to cart',
+		image: '/assets/images'
 	},
 
 	specs: {
@@ -33,9 +34,9 @@ export const mock_product = {
 				technology, and a modern design aesthetic.`,
 			],
 		},
-		list: {
+		deliverables: {
 			title: 'In the box',
-			bullets: [
+			list: [
 				{ pre: '1x', text: 'Headphone Unit' },
 				{ pre: '2x', text: 'Replacement Earcups' },
 				{ pre: '1x', text: 'User Manual' },

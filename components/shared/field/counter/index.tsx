@@ -41,6 +41,7 @@ const Counter: FCC<IPCounter> = ({
 				id="counter"
 				disabled={ disabled }
 				readOnly
+				tabIndex={-1}
 				value={ count }
 				aria-label="counter"
 			/>

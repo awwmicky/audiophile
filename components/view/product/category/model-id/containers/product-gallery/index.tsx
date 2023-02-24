@@ -3,11 +3,13 @@ import * as X from './_.styles'
 import { mock_product } from '../../_.constants'
 
 const ProductGallery = () => (
-	<div data-layer data-grid data-product-gallery>
-		<img src="" alt="" />
-		<img src="" alt="" />
-		<img src="" alt="" />
-	</div>
+	<X.FrameGallery>
+		{ Children.toArray(mock_product.gallery.map((item, index) => (
+			<X.ImageBox>
+				<X.Image src={ item } alt={`Gallery-${ index }`} />
+			</X.ImageBox>
+		))) }
+	</X.FrameGallery>
 )
 
 export { ProductGallery }

@@ -4,6 +4,7 @@ import { forwardRef } from 'react'
 
 import {
 	Loading as UILoading,
+	type LoadingProps
 } from '@nextui-org/react'
 
 import {
@@ -21,10 +22,29 @@ import {
 	AiOutlineShoppingCart,
   AiOutlineMinus,
   AiOutlinePlus,
+  AiOutlineClose,
 } from 'react-icons/ai'
 
 type IPIcons = SVGProps<SVGSVGElement>
 // & IconType
+
+export const Plus = (props: IPIcons) => <AiOutlinePlus { ...props } />
+export const Minus = (props: IPIcons) => <AiOutlineMinus { ...props } />
+
+export const Menu = (props: IPIcons) => <GiHamburgerMenu size={25} { ...props } />
+export const Cart = (props: IPIcons) => <AiOutlineShoppingCart size={25} { ...props } />
+export const Remove = (props: IPIcons) => <AiOutlineClose { ...props } />
+
+export const Check = (props: IPIcons) => <BiCheck size={25} { ...props } />
+export const UpArrow = (props: IPIcons) => <BiChevronUp size={25} { ...props } />
+export const DownArrow = (props: IPIcons) => <BiChevronDown size={25} { ...props } />
+export const RightArrow = (props: IPIcons) => <BiChevronRight size={25} { ...props } />
+
+export const Loading = ({
+		size="sm", type="points", ...rest
+}: LoadingProps) => (
+	<UILoading size={ size } type={ type } color="currentColor" { ...rest } />
+)
 
 export const Logo = forwardRef<SVGSVGElement, IPIcons>((props, ref) => (
 	<svg ref={ ref } { ...props } width="143" height="25" viewBox="0 0 143 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,16 +53,3 @@ export const Logo = forwardRef<SVGSVGElement, IPIcons>((props, ref) => (
 ))
 
 Logo.displayName = 'Logo'
-
-export const Plus = (props: IPIcons) => <AiOutlinePlus { ...props } />
-export const Minus = (props: IPIcons) => <AiOutlineMinus { ...props } />
-
-export const Menu = (props: IPIcons) => <GiHamburgerMenu size={25} { ...props } />
-export const Cart = (props: IPIcons) => <AiOutlineShoppingCart size={25} { ...props } />
-
-export const Check = (props: IPIcons) => <BiCheck size={25} { ...props } />
-export const UpArrow = (props: IPIcons) => <BiChevronUp size={25} { ...props } />
-export const DownArrow = (props: IPIcons) => <BiChevronDown size={25} { ...props } />
-export const RightArrow = (props: IPIcons) => <BiChevronRight size={25} { ...props } />
-
-export const Loading = (props: any) => <UILoading type="points" color="currentColor" size="sm" { ...props } />

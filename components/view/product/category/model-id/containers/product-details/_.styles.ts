@@ -26,20 +26,8 @@ export const ContentBox = tw.div`
 	md:place-content-center
 `
 
-export const Overline = tw(Text)`
-	text-accent-1
-`
-
+export const Overline = tw(Text)`text-accent-1`
 export const Name = tw(Title)`whitespace-pre-line`
-
-export const Details = tw(Text)`
-	opacity-50
-`
-
-export const Price = tw.span`
-	text-lg font-bold
-`
-
-export const ActionBox = tw.div`
-	flex gap-4
-`
+export const Details = tw(Text)`opacity-50`
+export const Price = tw.span`text-lg font-bold`
+export const ActionBox = tw.div`flex gap-4`

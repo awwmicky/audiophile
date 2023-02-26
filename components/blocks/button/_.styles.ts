@@ -43,7 +43,6 @@ const ButtonStyle = ({ variant, loading }: TButtonStyle) => [
 	(loading === 'true') && tw`
 		[& #text]:text-transparent
 		relative [& #loading]:absolute
-		[& #icon]:hidden
 		disabled:(opacity-50 cursor-wait)
 	`,
 ]

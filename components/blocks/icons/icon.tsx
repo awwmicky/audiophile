@@ -1,11 +1,17 @@
-import type { SVGProps } from 'react'
+import type { SVGProps, HTMLAttributes } from 'react'
 import { forwardRef } from 'react'
 // import type { IconType } from 'react-icons'
 
 import {
 	Loading as UILoading,
-	type LoadingProps
+	type LoadingProps,
 } from '@nextui-org/react'
+
+import {
+	AiOutlineShoppingCart,
+  AiOutlineMinus,
+  AiOutlinePlus,
+} from 'react-icons/ai'
 
 import {
 	BiCheck,
@@ -19,31 +25,26 @@ import {
 } from 'react-icons/gi'
 
 import {
-	AiOutlineShoppingCart,
-  AiOutlineMinus,
-  AiOutlinePlus,
-  AiOutlineClose,
-} from 'react-icons/ai'
+	IoMdClose,
+} from 'react-icons/io'
 
-type IPIcons = SVGProps<SVGSVGElement>
-// & IconType
+type IPIcons = SVGProps<SVGSVGElement> & { size?: number }
+type IPLoading = LoadingProps & { id?: string }
 
 export const Plus = (props: IPIcons) => <AiOutlinePlus { ...props } />
 export const Minus = (props: IPIcons) => <AiOutlineMinus { ...props } />
 
 export const Menu = (props: IPIcons) => <GiHamburgerMenu size={25} { ...props } />
 export const Cart = (props: IPIcons) => <AiOutlineShoppingCart size={25} { ...props } />
-export const Remove = (props: IPIcons) => <AiOutlineClose { ...props } />
+export const Remove = (props: IPIcons) => <IoMdClose { ...props } />
 
-export const Check = (props: IPIcons) => <BiCheck size={25} { ...props } />
+export const Check = (props: IPIcons) => <BiCheck size={ props?.size || 25} { ...props } />
 export const UpArrow = (props: IPIcons) => <BiChevronUp size={25} { ...props } />
 export const DownArrow = (props: IPIcons) => <BiChevronDown size={25} { ...props } />
 export const RightArrow = (props: IPIcons) => <BiChevronRight size={25} { ...props } />
 
-export const Loading = ({
-		size="sm", type="points", ...rest
-}: LoadingProps) => (
-	<UILoading size={ size } type={ type } color="currentColor" { ...rest } />
+export const Loading = ({ ...rest }: IPLoading) => (
+	<UILoading color="currentColor" { ...rest } />
 )
 
 export const Logo = forwardRef<SVGSVGElement, IPIcons>((props, ref) => (

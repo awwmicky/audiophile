@@ -25,7 +25,7 @@ const Button = forwardRef<HTMLButtonElement, IPButton>(({
 		{ ...rest }
 	>
 		<span id="text">{ children ?? label ?? DEFAULT_TEXT }</span>
-		{ loading && <Icon.Loading id="loading" /> }
+		{ loading && <Icon.Loading size="sm" type="points" id="loading" /> }
 	</FrameButton>
 ))
 

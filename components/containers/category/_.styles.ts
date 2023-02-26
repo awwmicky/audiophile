@@ -1,18 +1,17 @@
-import NextLink from 'next/link'
+import { Card as UICard } from '@nextui-org/react'
 import tw from 'twin.macro'
-import { Layer } from '../../layout'
 import { Text } from '@/components/blocks'
+import { Layer } from '../../layout'
 
 export const Frame = tw(Layer)`
-	flex gap-24 flex-col place-items-center
-	md:(gap-4 flex-row)
-	lg:gap-8
+	flex gap-8 flex-col place-items-center place-content-between
+	[&>*]:(w-full) md:(gap-4 flex-row) lg:gap-8
 `
 
-export const Card = tw(NextLink)`
-	relative mt-12 p-6 pt-20 w-full
+export const Card = tw(UICard)`
+	relative mt-12 p-6 pt-20
 	flex gap-4 flex-col place-items-center
-	bg-dominant-3 rounded-lg
+	bg-dominant-3 rounded-lg overflow-visible
 `
 
 export const Image = tw.img`

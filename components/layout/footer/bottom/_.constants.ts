@@ -25,7 +25,7 @@ export const contentBottom = {
 		{ title: 'TypeScript',		icon: TechIcon.TypeScript,	link: 'https://typescriptlang.org/' },
 		{ title: 'React',					icon: TechIcon.React,				link: 'https://reactjs.org/' },
 		{ title: 'Tailwind CSS',	icon: TechIcon.TailwindCss,	link: 'https://tailwindcss.com/' },
-		{ title: 'Zustand', 			icon: TechIcon.Zustand,			link: 'https://zustand-demo.pmnd.rs/' },
+		{ title: 'Easy Peasy', 		icon: TechIcon.EasyPeasy,		link: 'https://easy-peasy.vercel.app/' },
 		{ title: 'Stripe', 				icon: TechIcon.Stripe,			link: 'https://stripe.com/' },
 	],
 }

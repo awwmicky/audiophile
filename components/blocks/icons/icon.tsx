@@ -3,8 +3,8 @@ import { forwardRef } from 'react'
 // import type { IconType } from 'react-icons'
 
 import {
-	Loading as UILoading,
 	type LoadingProps,
+	Loading as UILoading,
 } from '@nextui-org/react'
 
 import {

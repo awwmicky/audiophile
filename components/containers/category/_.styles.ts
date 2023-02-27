@@ -1,7 +1,7 @@
 import { Card as UICard } from '@nextui-org/react'
 import tw from 'twin.macro'
+import { Layer } from '@/components/layout/layer'
 import { Text } from '@/components/blocks'
-import { Layer } from '../../layout'
 
 export const Frame = tw(Layer)`
 	flex gap-8 flex-col place-items-center place-content-between

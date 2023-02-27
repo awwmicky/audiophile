@@ -25,7 +25,7 @@ const Cart = () => {
 		<X.FrameCart>
 			<X.CartHeader>
 				<X.CartTotal h3>{ copy.count_line } <b>({ totalCartQty })</b></X.CartTotal>
-				<UIButton { ...buttonProp } onPress={ onEmptyCart }>Remove All</UIButton>
+				<UIButton { ...buttonProp } onPress={ onEmptyCart }>{ copy.remove_btn_text }</UIButton>
 			</X.CartHeader>
 
 			{ (!cartList.length) ? (
@@ -64,7 +64,7 @@ const Cart = () => {
 				<X.CartFooter>
 					<Text base="true">{ copy.total_line }</Text>
 					<Text base="true">{ currency.format(totalPrice) }</Text>
-					<Button variant="filled">{ copy.btn_text }</Button>
+					<Button variant="filled">{ copy.checkout_btn_text }</Button>
 				</X.CartFooter>
 			</>
 			) }

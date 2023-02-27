@@ -2,8 +2,9 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Children } from 'react'
 import { useStoreState } from '@/src/store'
-import { Badge, Button } from '@nextui-org/react'
+import { Badge, Button, Modal, useModal } from '@nextui-org/react'
 import { Link, Icon } from '@/components/blocks'
+import { Category } from '../../containers'
 import { root_path, paths_nav } from '@/src/_path.routes'
 import * as X from './_.styles'
 
@@ -30,9 +31,9 @@ const CartMenu = () => {
 
 	return (
 		<NextLink href={ root_path.cart } data-cart-menu>
-			{/* <Badge content={ totalCartQty } isInvisible={ !totalCartQty } size="sm" placement="top-left"> */}
+			<Badge content={ totalCartQty } isInvisible={ !totalCartQty } size="sm" placement="top-left">
 				<Button auto light icon={ <Icon.Cart /> } />
-			{/* </Badge> */}
+			</Badge>
 		</NextLink>
 	)
 }
@@ -42,7 +43,8 @@ const NavBar = () => {
 
 	return (
 		<>
-			<Button auto light icon={ <Icon.Menu /> } data-nav-btn />
+			{/* <Button auto light icon={ <Icon.Menu /> } data-nav-btn /> */}
+			<NavMobile />
 			<X.NavMenu data-nav-menu>
 				{ Children.toArray(paths_nav.map((item) => (
 					<NextLink passHref legacyBehavior href={ item.link }>
@@ -54,6 +56,29 @@ const NavBar = () => {
 					</NextLink>
 				))) }
 			</X.NavMenu>
+		</>
+	)
+}
+
+const NavMobile = () => {
+	const { visible, setVisible, bindings } = useModal()
+	const toggleModal = () => setVisible((prev) => !prev)
+
+	return (
+		<>
+			<Button
+				auto light
+				icon={ !visible ? <Icon.Menu /> : <Icon.CloseMenu /> }
+				data-nav-btn
+				onPress={ toggleModal }
+			/>
+			<Modal
+				closeButton
+				width="100%"
+				className="p-6"
+        { ...bindings }
+      ><Category />
+			</Modal>
 		</>
 	)
 }

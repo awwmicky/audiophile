@@ -33,6 +33,23 @@ const BaseReset = createGlobalStyle({
     '-webkit-appearance': 'none',
     margin: 0,
   },
+	'#nextui-modal': {
+		'&>.nextui-backdrop': {
+			overflow: 'hidden',
+			inset: 'unset',
+			width: `${ 100 }%`,
+			top: `${ 80 }px`,
+			left: 0,
+			'&>.nextui-backdrop-layer': {
+				inset: 'unset',
+				top: `${ 80 }px`,
+				left: 0,
+			},
+			'&>.nextui-backdrop-content': {
+				marginBlock: 'auto',
+			},
+		},
+	}
 })
 
 export { BaseReset }

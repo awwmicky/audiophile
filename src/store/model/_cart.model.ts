@@ -1,8 +1,8 @@
 import type { Action, Computed } from 'easy-peasy'
 import { action, computed } from 'easy-peasy'
 import { toast } from 'react-hot-toast'
+import { mock_cart } from '@/components/view/cart/_.constants'
 import type { IProduct } from '@/types'
-import { mock_cart } from '../_.constants'
 
 interface ICartItem extends IProduct {
 	cart_qty: number

@@ -11,7 +11,7 @@ export const Frame = tw(Layer)`
 	[&>*[data-nav-menu]]:(order-2)
 
 	[& .nextui-badge]:(bg-accent-1/75)
-	[& .nextui-button-icon]:(text-white hover:text-[#D87D4A] active:text-white)
+	[& .nextui-button-icon]:(text-white hover:text-accent-1 active:text-white)
 `
 
 export const NavMenu = tw.nav`

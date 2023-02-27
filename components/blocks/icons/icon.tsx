@@ -25,6 +25,10 @@ import {
 } from 'react-icons/gi'
 
 import {
+	VscChromeClose,
+} from 'react-icons/vsc'
+
+import {
 	IoMdClose,
 } from 'react-icons/io'
 
@@ -35,6 +39,7 @@ export const Plus = (props: IPIcons) => <AiOutlinePlus { ...props } />
 export const Minus = (props: IPIcons) => <AiOutlineMinus { ...props } />
 
 export const Menu = (props: IPIcons) => <GiHamburgerMenu size={25} { ...props } />
+export const CloseMenu = (props: IPIcons) => <VscChromeClose size={25} { ...props } />
 export const Cart = (props: IPIcons) => <AiOutlineShoppingCart size={25} { ...props } />
 export const Remove = (props: IPIcons) => <IoMdClose { ...props } />
 

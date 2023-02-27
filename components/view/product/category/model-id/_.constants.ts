@@ -1,17 +1,30 @@
 import { root_path } from '@/src/_path.routes'
 
-export const mock_product = {
+export const copy = {
 	details: {
 		overline: 'New product',
+		sold_text: 'Sold out',
+		btn_text: 'Add to cart',
+	},
+	features_title: 'Features',
+	deliverables_title: 'In the box',
+	recommended_title: 'You may also like',
+}
+
+export const mock_product = {
+	details: {
+		new: true,
+		image: '/assets/images',
 		name: 'XX99 Mark II\nHeadphones',
-		detail: `
+		model: 'xx99-mk-ii',
+		category: 'speakers' as const,
+		description: `
 			The new XX99 Mark II headphones is the pinnacle of pristine audio.
 			It redefines your premium headphone experience by reproducing
 			the balanced depth and precision of studio-quality sound.
 		`,
-		price: 2999, // $2,999
-		btn_text: 'Add to cart',
-		image: '/assets/images'
+		price: 5555,
+		qty: 5,
 	},
 
 	specs: {

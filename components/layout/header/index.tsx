@@ -1,6 +1,7 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Children } from 'react'
+import { useStoreState } from '@/src/store'
 import { Badge, Button } from '@nextui-org/react'
 import { Link, Icon } from '@/components/blocks'
 import { root_path, paths_nav } from '@/src/_path.routes'
@@ -24,13 +25,17 @@ const Branding = () => (
 	</NextLink>
 )
 
-const CartMenu = () => (
-	<NextLink href={ root_path.cart } data-cart-menu>
-		<Badge content={5} size="sm" placement="top-left">
-			<Button auto light icon={ <Icon.Cart /> } />
-		</Badge>
-	</NextLink>
-)
+const CartMenu = () => {
+	const totalCartQty = useStoreState((state) => state.totalCartQty)
+
+	return (
+		<NextLink href={ root_path.cart } data-cart-menu>
+			{/* <Badge content={ totalCartQty } isInvisible={ !totalCartQty } size="sm" placement="top-left"> */}
+				<Button auto light icon={ <Icon.Cart /> } />
+			{/* </Badge> */}
+		</NextLink>
+	)
+}
 
 const NavBar = () => {
 	const activePath = useRouter().asPath

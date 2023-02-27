@@ -5,7 +5,7 @@ import { mock_product } from '../../_.constants'
 
 const ProductSpecs = () => (
 	<X.FrameSpecs>
-		<X.InnerBox>
+		<X.InnerBox data-features>
 			<X.Title h3>{ mock_product.specs.features.title }</X.Title>
 			<X.Detail base="true">
 				{ Children.toArray(mock_product.specs.features.description.map((item, index) => (
@@ -14,7 +14,7 @@ const ProductSpecs = () => (
 			</X.Detail>
 		</X.InnerBox>
 
-		<X.InnerBox>
+		<X.InnerBox data-deliverables>
 			<X.Title h3>{ mock_product.specs.deliverables.title }</X.Title>
 			<X.List>
 				{ Children.toArray(mock_product.specs.deliverables.list.map((item) => (

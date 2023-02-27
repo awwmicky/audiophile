@@ -1,13 +1,14 @@
-import tw, { styled } from 'twin.macro'
+import tw from 'twin.macro'
 import { Layer } from '@/components/layout'
 import { Title as UITitle, Text } from '@/components/blocks'
 
 export const FrameSpecs = tw(Layer)`
 	flex gap-24 flex-col
-	lg:flex-row
-	// [&:nth-child(1)]:bg-red-400
-	lg:[&>*:nth-child(1)]:(flex-[2])
-	lg:[&>*:nth-child(2)]:(flex-[1])
+	lg:(
+		flex-row
+		[&>*[data-features]]:(flex-[2])
+		[&>*[data-deliverables]]:(flex-[1])
+	)
 `
 
 export const InnerBox = tw.div`

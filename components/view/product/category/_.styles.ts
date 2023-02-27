@@ -19,10 +19,10 @@ export const Section = styled('section')<TSectionStyle>(({ order }) => [
 		lg:(flex-row [&>*]:flex-1)
 	`,
 	(order! % 2 === 0)
-		? tw`lg:[&>*:nth-child(2)]:ml-20`
+		? tw`lg:[&>*[data-content]]:ml-20`
 		: tw`
-			lg:[&>*:nth-child(1)]:order-2
-			lg:[&>*:nth-child(2)]:mr-20
+			lg:[&>*[data-image]]:order-2
+			lg:[&>*[data-content]]:mr-20
 		`
 	,
 ])
@@ -38,15 +38,6 @@ export const ContentBox = tw.div`
 `
 
 export const Image = tw.img``
-
-export const Overline = tw(Text)`
-	text-accent-1
-`
-
-export const Name = tw(Title)`
-	whitespace-pre-line
-`
-
-export const Detail = tw(Text)`
-	my-4 max-w-[60ch] opacity-50
-`
+export const Overline = tw(Text)`text-accent-1`
+export const Name = tw(Title)`whitespace-pre-line`
+export const Detail = tw(Text)`my-4 max-w-[60ch] opacity-50`

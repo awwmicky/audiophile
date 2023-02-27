@@ -12,6 +12,7 @@ export const mock_category = [
 			and precision of studio-quality sound.
 		`,
 		link: `${ root_path.product }/headphones`, // /model-id
+		image: '/assets/images'
 	},
 	{
 		id: 2,
@@ -23,6 +24,7 @@ export const mock_category = [
 			and precision of studio-quality sound.
 		`,
 		link: `${ root_path.product }/headphones`, // /model-id
+		image: '/assets/images'
 	},
 	{
 		id: 3,
@@ -34,5 +36,6 @@ export const mock_category = [
 			and precision of studio-quality sound.
 		`,
 		link: `${ root_path.product }/headphones`, // /model-id
+		image: '/assets/images'
 	},
 ]

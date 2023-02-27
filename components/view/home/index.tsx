@@ -1,8 +1,8 @@
 import NextLink from 'next/link'
+import { Children } from 'react'
 import { Title, Button } from '@/components/blocks'
 import { mock_hero, mock_product } from './_.constants'
 import * as X from './_.styles'
-import { Children } from 'react'
 
 export const Hero = () => (
 	<div className="bg-complement-3">
@@ -11,7 +11,7 @@ export const Hero = () => (
 				<X.HeroOverline overline="true" mode="light">{ mock_hero.overline }</X.HeroOverline>
 				<Title h1 mode="light">{ mock_hero.name }</Title>
 				<X.HeroDetail base="true" mode="light">{ mock_hero.detail }</X.HeroDetail>
-				<NextLink passHref href={ mock_hero.link }>
+				<NextLink href={ mock_hero.link }>
 					<Button variant="filled" />
 				</NextLink>
 			</X.HeroContent>
@@ -34,7 +34,7 @@ export const Product = () => (
 					{ item?.detail && (
 						<X.ProductDetail>{ item.detail }</X.ProductDetail>
 					)}
-					<NextLink passHref href={ item.link }>
+					<NextLink href={ item.link }>
 						<Button variant={ item.btn_variant } />
 					</NextLink>
 				</div>

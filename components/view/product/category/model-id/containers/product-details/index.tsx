@@ -1,41 +1,59 @@
-import { type FCC } from 'react'
+import { type FCC, useState } from 'react'
 import { Counter } from '@/components/shared/field'
-import { Button } from '@/components/blocks'
+import { Text, Button } from '@/components/blocks'
+import { useStoreActions } from '@/src/store'
 import { currency } from '@/src/_utils'
 import * as X from './_.styles'
-import { mock_product } from '../../_.constants'
+import { copy, mock_product } from '../../_.constants'
 
 interface IPProductDetails {
 	modelId?: string | string[]
 }
 
-const ProductDetails: FCC<IPProductDetails> = ({ modelId }) => (
-	<X.FrameDetails>
-		<X.ImageBox>
-			<X.Image
-				src={ mock_product.details.image }
-				alt={`Product-${ mock_product.details.name }`}
-			/>
-		</X.ImageBox>
+const ProductDetails: FCC<IPProductDetails> = ({ modelId }) => {
+	const [ cartQty, setCartQty ] = useState(1)
+	const onAddtoCart = useStoreActions((state) => state.onAddToCart)
 
-		<X.ContentBox>
-			{ mock_product.details?.overline && (
-				<X.Overline overline="true">{ mock_product.details.overline }</X.Overline>
-			)}
-			<X.Name h2>{ mock_product.details.name }</X.Name>
-			<X.Details base="true">{ mock_product.details.detail }</X.Details>
-			<X.Price>{ currency.format(mock_product.details.price) }</X.Price>
+	return (
+		<X.FrameDetails>
+			<X.ImageBox>
+				<X.Image
+					src={ mock_product.details.image }
+					alt={`Product-${ mock_product.details.name }`}
+				/>
+			</X.ImageBox>
 
-			<X.ActionBox>
-				<Counter value={ 1 } />
-				<Button variant="filled" label={ mock_product.details.btn_text } />
-			</X.ActionBox>
+			<X.ContentBox>
+				{ mock_product.details?.new && (
+					<X.Overline overline="true">{ copy.details.overline }</X.Overline>
+				)}
+				<X.Name h2>{ mock_product.details.name }</X.Name>
+				<X.Details base="true">{ mock_product.details.description }</X.Details>
+				<X.Price>{ currency.format(mock_product.details.price) }</X.Price>
 
-			<small>
-				model-id :: <b>{ modelId }</b>
-			</small>
-		</X.ContentBox>
-	</X.FrameDetails>
-)
+				{ !mock_product.details.qty ? (
+					<Text>{ copy.details.sold_text }</Text>
+				) : (
+					<X.ActionBox>
+						<Counter
+							value={ cartQty }
+							max={ mock_product.details.qty }
+							setCount={ setCartQty }
+						/>
+						<Button
+							variant="filled"
+							label={ copy.details.btn_text }
+							onClick={ () => onAddtoCart({ product: mock_product.details, qty: cartQty }) }
+						/>
+					</X.ActionBox>
+				)}
+
+				<small>
+					model-id :: <b>{ modelId }</b>
+				</small>
+			</X.ContentBox>
+		</X.FrameDetails>
+	)
+}
 
 export { ProductDetails }

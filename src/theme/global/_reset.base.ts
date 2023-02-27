@@ -18,7 +18,6 @@ const BaseReset = createGlobalStyle({
 		display: 'flex',
     flexFlow: 'column',
 		gap: '7rem',
-		marginBlockEnd: '7rem',
   },
 	'h1, h2, h3, h4, h5, h6': {
 		margin: '0',

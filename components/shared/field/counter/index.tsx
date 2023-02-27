@@ -1,9 +1,7 @@
-import type { FCC, DetailedHTMLProps, HTMLAttributes } from 'react'
-import { useState } from 'react'
+import type { FCC, HTMLAttributes } from 'react'
+// import { useState } from 'react'
 import { Icon } from '@/components/blocks'
 import * as X from './_.styles'
-
-// FIXME:
 
 type TCounterAttrs = HTMLAttributes<HTMLDivElement>
 interface IPCounter extends TCounterAttrs {
@@ -11,18 +9,21 @@ interface IPCounter extends TCounterAttrs {
 	min?: number
 	max?: number
 	disabled?: boolean
+	setCount: (cb: (num: number) => number) => void
+	// Dispatch<SetStateAction<number>>
 }
 
 const Counter: FCC<IPCounter> = ({
 	value=1,
-	min=0,
-	max=10,
+	min=1,
+	max=1,
 	disabled,
+	setCount= () => undefined,
 	...rest
 }) => {
-	const [count, setCount] = useState(value)
-	const increment = () => (count < max) && setCount((prevNum) => prevNum+1)
-	const decrement = () => (count > min) && setCount((prevNum) => prevNum-1)
+	// const [count, setCount] = useState(value)
+	const decrement = () => (value > min) && setCount((prevNum) => prevNum-1)
+	const increment = () => (value < max) && setCount((prevNum) => prevNum+1)
 
 	return (
 		<X.Field
@@ -32,7 +33,8 @@ const Counter: FCC<IPCounter> = ({
 			<X.FieldButton
 				auto
 				disabled={ disabled }
-				onClick={ decrement }
+				value="decrement"
+				onPress={ decrement }
 			><Icon.Minus />
 			</X.FieldButton>
 
@@ -42,14 +44,15 @@ const Counter: FCC<IPCounter> = ({
 				disabled={ disabled }
 				readOnly
 				tabIndex={-1}
-				value={ count }
+				value={ value }
 				aria-label="counter"
 			/>
 
 			<X.FieldButton
 				auto
 				disabled={ disabled }
-				onClick={ increment }
+				value="increment"
+				onPress={ increment }
 			><Icon.Plus />
 			</X.FieldButton>
 		</X.Field>

@@ -2,7 +2,7 @@ import { About, Category } from '@/components/containers'
 import { RootLayer } from '@/components/layout'
 import { Hero, Product } from '@/components/view'
 
-const IndexPage = () => (
+const HomePage = () => (
 	<RootLayer>
 		<Hero />
 		<Category />
@@ -11,4 +11,4 @@ const IndexPage = () => (
 	</RootLayer>
 )
 
-export default IndexPage
+export default HomePage

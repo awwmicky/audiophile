@@ -18,11 +18,11 @@ export const CategoryItem = () => (
 	<X.FrameCategory>
 		{ Children.toArray(mock_category.map(((item, index) => (
 			<X.Section order={ index }>
-				<X.ImageBox>
-					<X.Image src="/" alt={`Product-${ index }`} />
+				<X.ImageBox data-image>
+					<X.Image src={ item.image } alt={`Product-${ index }`} />
 				</X.ImageBox>
 
-				<X.ContentBox>
+				<X.ContentBox data-content>
 					{ item?.overline && (
 						<X.Overline overline="true">{ item.overline }</X.Overline>
 					)}

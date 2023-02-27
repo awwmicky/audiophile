@@ -11,12 +11,12 @@ const ProductRecommended = () => (
 			{ Children.toArray(mock_product.recommended.list.map((item, index) => (
 				<X.Card>
 					<X.ImageBox>
-						<X.Image src="" alt={`Product-${index}`} />
+						<X.Image src={ item.image } alt={`Product-${index}`} />
 					</X.ImageBox>
 
 					<Title h4>{ item.name }</Title>
 
-					<NextLink passHref href={ item.link }>
+					<NextLink href={ item.link }>
 						<Button variant="filled" />
 					</NextLink>
 				</X.Card>

@@ -1,4 +1,4 @@
 export * from './store'
 export * from './theme'
-export * from './_utils'
-export * from './_path.routes'
+export * from './_.utils'
+export * from './_.routes'

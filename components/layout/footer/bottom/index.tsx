@@ -7,7 +7,7 @@ const Bottom = () => (
 	<div className="bg-complement-3">
 		<X.Frame>
 			<div>
-				<X.Title>{ copy.techUsed }</X.Title>
+				<X.Title>{ copy.tech_used }</X.Title>
 				<X.List>
 					{ Children.toArray(content.technologies.map((item) => (
 						<li><Link newTab mode="light" title={ item.title } href={ item.link }>{ item.icon() }</Link></li>
@@ -16,11 +16,11 @@ const Bottom = () => (
 			</div>
 
 			<div>
-				<X.Title>{ copy.moreInfo }</X.Title>
+				<X.Title>{ copy.more_info }</X.Title>
 				<X.List>
-					{ Children.toArray(content.moreInfo.map((item, index) => (
+					{ Children.toArray(content.more_info.map((item, index) => (
 						<>
-							{ (index === content.moreInfo.length-1) && <hr /> }
+							{ (index === content.more_info.length-1) && <hr /> }
 							<li><Link newTab mode="light" title={ item.title } href={ item.link }>{ item.icon() }</Link></li>
 						</>
 					))) }
@@ -28,7 +28,7 @@ const Bottom = () => (
 			</div>
 
 			<X.ClosingText>
-				<code>{ copy.madeBy }</code>
+				<code>{ copy.made_by }</code>
 			</X.ClosingText>
 		</X.Frame>
 	</div>

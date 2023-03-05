@@ -7,8 +7,8 @@ import { Link, Icon } from '@/components/blocks'
 import { Category } from '@/components/containers'
 import { useStoreState } from '@/src/store'
 import { useEventListener } from '@/src/hooks'
-import { root_path, paths_nav } from '@/src/_path.routes'
-import { debounce } from '@/src/_utils'
+import { root_path, paths_nav } from '@/src/_.routes'
+import { debounce } from '@/src/_.utils'
 import * as X from './_.styles'
 
 const Header = () => (

@@ -1,4 +1,4 @@
-import { root_path } from '@/src/_path.routes'
+import { root_path } from '@/src/_.routes'
 
 export const mock_hero = {
 	// new: true,

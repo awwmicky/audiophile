@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { type FC, Children } from 'react'
 import { Title, Button } from '@/components/blocks'
 import type { ICategoryItem } from '@/types'
-import { root_path } from '@/src/_path.routes'
+import { root_path } from '@/src/_.routes'
 // import { mock_category } from './_.constants'
 import * as X from './_.styles'
 

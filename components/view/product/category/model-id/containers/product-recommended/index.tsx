@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router'
 import { type FC, Children } from 'react'
 import { Title, Button } from '@/components/blocks'
-import { root_path } from '@/src/_path.routes'
+import { root_path } from '@/src/_.routes'
 import { IDetailItem } from '@/types'
 import * as X from './_.styles'
 import { copy, mock_product } from '../../_.constants'

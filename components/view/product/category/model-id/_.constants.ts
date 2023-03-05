@@ -1,4 +1,4 @@
-// import { root_path } from '@/src/_path.routes'
+// import { root_path } from '@/src/_.routes'
 
 export const copy = {
 	details: {
@@ -42,7 +42,8 @@ export const mock_product = {
 			your surroundings when you need to. Combined with Bluetooth\
 			5.0 compliant connectivity and 17 hour battery life, the XX99\
 			Mark II headphones gives you superior sound, cutting-edge\
-			technology, and a modern design aesthetic.",
+			technology, and a modern design aesthetic.\
+		",
 		deliverables_list: [
 			{ amount: 1, label: 'Headphone Unit' },
 			{ amount: 2, label: 'Replacement Earcups' },

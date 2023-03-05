@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { RootLayer } from '@/components/layout'
 import { Checkout } from '@/components/view'
 import { useStoreActions } from '@/src/store'
-import { runFireworks } from '@/src/_utils'
+import { runFireworks } from '@/src/_.utils'
 
 interface IPCheckout {
 	status: "successful" | "cancelled"

@@ -1,13 +1,13 @@
 import { InfoIcon, TechIcon } from '@/components/blocks'
 
 export const copy = {
-	moreInfo: 'For more info',
-	techUsed: 'Technologies used',
-	madeBy: 'Concept project made by Michael Alvarez',
+	more_info: 'For more info',
+	tech_used: 'Technologies used',
+	made_by: 'Concept project made by Michael Alvarez',
 }
 
 export const content = {
-	moreInfo: [
+	more_info: [
 		{ title: 'GitHub',			icon: InfoIcon.Github,			link: 'http://github.com/awwmicky' },
 		{ title: 'LinkedIn',		icon: InfoIcon.Linkedin,		link: 'http://linkedin.com/in/awwmicky/' },
 		{ title: 'Twitter', 		icon: InfoIcon.Twitter,			link: 'http://twitter.com/awwmicky/' },

@@ -2,7 +2,7 @@ import { RootLayer } from '@/components/layout'
 import { Cart } from '@/components/view'
 
 const CartPage = () => (
-	<RootLayer>
+	<RootLayer className="mt-4">
 		<Cart />
 	</RootLayer>
 )

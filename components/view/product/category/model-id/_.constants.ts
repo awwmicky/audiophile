@@ -1,4 +1,4 @@
-import { root_path } from '@/src/_path.routes'
+// import { root_path } from '@/src/_path.routes'
 
 export const copy = {
 	details: {
@@ -17,7 +17,7 @@ export const mock_product = {
 		image: '/assets/images',
 		name: 'XX99 Mark II\nHeadphones',
 		model: 'xx99-mk-ii',
-		category: 'speakers' as const,
+		category: 'headphones' as const,
 		description: `
 			The new XX99 Mark II headphones is the pinnacle of pristine audio.
 			It redefines your premium headphone experience by reproducing
@@ -28,35 +28,28 @@ export const mock_product = {
 	},
 
 	specs: {
-		features: {
-			title: 'Features',
-			description: [
-				`Featuring a genuine leather head strap and premium earcups,
-				these headphones deliver superior comfort for those who like
-				to enjoy endless listening. It includes intuitive controls
-				designed for any situation. Whether you’re taking a business
-				call or just in your own personal space, the auto on/off and
-				pause features ensure that you’ll never miss a beat.`,
-
-				`The advanced Active Noise Cancellation with built-in equalizer
-				allow you to experience your audio world on your terms. It
-				lets you enjoy your audio in peace, but quickly interact with
-				your surroundings when you need to. Combined with Bluetooth
-				5.0 compliant connectivity and 17 hour battery life, the XX99
-				Mark II headphones gives you superior sound, cutting-edge
-				technology, and a modern design aesthetic.`,
-			],
-		},
-		deliverables: {
-			title: 'In the box',
-			list: [
-				{ pre: '1x', text: 'Headphone Unit' },
-				{ pre: '2x', text: 'Replacement Earcups' },
-				{ pre: '1x', text: 'User Manual' },
-				{ pre: '1x', text: '3.5mm 5m Audio Cable' },
-				{ pre: '1x', text: 'Travel Bag' },
-			],
-		},
+		features_description: "\
+			Featuring a genuine leather head strap and premium earcups,\
+			these headphones deliver superior comfort for those who like\
+			to enjoy endless listening. It includes intuitive controls\
+			designed for any situation. Whether you're taking a business\
+			call or just in your own personal space, the auto on/off and\
+			pause features ensure that you'll never miss a beat."+
+			"\n\n"+
+			"The advanced Active Noise Cancellation with built-in equalizer\
+			allow you to experience your audio world on your terms. It\
+			lets you enjoy your audio in peace, but quickly interact with\
+			your surroundings when you need to. Combined with Bluetooth\
+			5.0 compliant connectivity and 17 hour battery life, the XX99\
+			Mark II headphones gives you superior sound, cutting-edge\
+			technology, and a modern design aesthetic.",
+		deliverables_list: [
+			{ amount: 1, label: 'Headphone Unit' },
+			{ amount: 2, label: 'Replacement Earcups' },
+			{ amount: 1, label: 'User Manual' },
+			{ amount: 1, label: '3.5mm 5m Audio Cable' },
+			{ amount: 1, label: 'Travel Bag' },
+		],
 	},
 
 	gallery: [
@@ -65,24 +58,24 @@ export const mock_product = {
 		'/assets/images',
 	],
 
-	recommended: {
-		title: 'You may also like',
-		list: [
-			{
-				image: '/',
-				name: 'ZX9 Speaker',
-				link: `${ root_path.product }/speakers`, // /model-id
-			},
-			{
-				image: '/',
-				name: 'ZX9 Speaker',
-				link: `${ root_path.product }/speakers`, // /model-id
-			},
-			{
-				image: '/',
-				name: 'ZX9 Speaker',
-				link: `${ root_path.product }/speakers`, // /model-id
-			},
-		],
-	},
+	recommended: [
+		{
+			image: '/assets/images',
+			name: 'XX99 Mark I',
+			model: 'xx99-mk-i',
+			category: 'headphones' as const,
+		},
+		{
+			image: '/assets/images',
+			name: 'XX59',
+			model: 'xx59',
+			category: 'headphones' as const,
+		},
+		{
+			image: '/assets/images',
+			name: 'ZX9 Speaker',
+			model: 'zx9-s',
+			category: 'speakers' as const,
+		},
+	],
 }

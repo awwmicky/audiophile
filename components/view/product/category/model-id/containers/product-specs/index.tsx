@@ -1,24 +1,32 @@
-import { Children } from 'react'
+import { type FC,Children } from 'react'
 // import { Title } from '@/components/blocks'
+import { IDetailItem } from '@/types'
 import * as X from './_.styles'
-import { mock_product } from '../../_.constants'
+import { copy, mock_product } from '../../_.constants'
 
-const ProductSpecs = () => (
+interface IPProductSpecs {
+	specs: Pick<IDetailItem, 'specs'>
+}
+
+const ProductSpecs: FC<IPProductSpecs> = ({
+	specs
+}) => (
 	<X.FrameSpecs>
 		<X.InnerBox data-features>
-			<X.Title h3>{ mock_product.specs.features.title }</X.Title>
+			<X.Title h3>{ copy.features_title }</X.Title>
 			<X.Detail base="true">
-				{ Children.toArray(mock_product.specs.features.description.map((item, index) => (
+				{ mock_product.specs.features_description }
+				{/* { Children.toArray(mock_product.specs.features_description.map((item, index) => (
 					<span>{ item }</span>
-				)))}
+				)))} */}
 			</X.Detail>
 		</X.InnerBox>
 
 		<X.InnerBox data-deliverables>
-			<X.Title h3>{ mock_product.specs.deliverables.title }</X.Title>
+			<X.Title h3>{ copy.deliverables_title }</X.Title>
 			<X.List>
-				{ Children.toArray(mock_product.specs.deliverables.list.map((item) => (
-					<X.Item as="li" base="true"><b>{ item.pre }</b> { item.text }</X.Item>
+				{ Children.toArray(mock_product.specs.deliverables_list.map((item) => (
+					<X.Item as="li" base="true"><b>{ item.amount }x</b> { item.label }</X.Item>
 				))) }
 			</X.List>
 		</X.InnerBox>

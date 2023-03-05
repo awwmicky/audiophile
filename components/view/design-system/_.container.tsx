@@ -1,15 +1,15 @@
-"use client"
 
+// import tw from 'twin.macro'
 import { Children } from 'react'
 import * as X from './_.styles'
-import * as copy from './_.constants'
+import { colors, typography, buttons, fields } from './_.constants'
 
 export const Color = () => (
 	<X.Section>
 		<X.Title><X.No>01</X.No> Colors</X.Title>
 
 		<X.ColorGrid>
-			{ Children.toArray(copy.colors.map((item) => (
+			{ Children.toArray(colors.map((item) => (
 				<X.Card>
 					<X.CardHeader colorValue={ item.hex } />
 					<X.CardBody>
@@ -28,22 +28,36 @@ export const Typography = () => (
 		<X.Title><X.No>02</X.No> Typography</X.Title>
 
 		<X.TypeFlex>
-			<X.TypeName>{ copy.typography.typeface.name }</X.TypeName>
+			<X.TypeName>{ typography.typeface.name }</X.TypeName>
 			<X.TypeAlphabet>
-				<span>{ copy.typography.typeface.alphabet.line1 }</span>
-				<span>{ copy.typography.typeface.alphabet.line2 }</span>
-				<span>{ copy.typography.typeface.alphabet.line3 }</span>
+				{ Children.toArray(typography.typeface.alphabet) }
 			</X.TypeAlphabet>
 		</X.TypeFlex>
 		<br />
 		<X.TypeGrid>
-			{ Children.toArray(Object.entries(copy.typography.type_scale).map(([key, val]) => (
+			{ Children.toArray(Object.entries(typography.type_scale).map(([key, val]) => (
 				<div>
 					<X.TypeSpecs>{ val.specs }</X.TypeSpecs>
 					<X.TypeSample variant={ key as any }>{ val.sample }</X.TypeSample>
 				</div>
 			))) }
 		</X.TypeGrid>
+		<br />
+		<div>
+			{/* AAaa × 10 */}
+			<h3>Text Opacity</h3>
+			<br />
+			<div className="flex gap-6 flex-wrap bg-white border">
+				{ Children.toArray(Array(10).fill('TEXT SAMPLE').map((item, index) => (
+					<p className={`text-black opacity-${ (index+1).toString()+'0' }`}>{ item }-{ index+1 }</p>
+				))) }
+			</div>
+			<div className="flex gap-6 flex-wrap bg-black">
+				{ Children.toArray(Array(10).fill('TEXT SAMPLE').map((item, index) => (
+					<p className={`text-white opacity-${ (index+1).toString()+'0' }`}>{ item }-{ index+1 }</p>
+				))) }
+			</div>
+		</div>
 		<br />
 		<small className="block text-center">
 			<b>definition: </b>
@@ -59,11 +73,11 @@ export const Buttons = () => (
 		<X.Title><X.No>03</X.No> Buttons</X.Title>
 
 		<X.FlexBox alt="1">
-			{ Children.toArray(copy.buttons.variant.map((item, idx) => (
+			{ Children.toArray(buttons.variant.map((item, idx) => (
 				<X.FlexBox alt="2">
 					<X.VariantTitle>Button { idx+1 } - { item.name }</X.VariantTitle>
 					<X.FlexBox alt="3">
-						{ Children.toArray(copy.buttons.action.map((_item) => (
+						{ Children.toArray(buttons.action.map((_item) => (
 							<div>
 								<X.Button variant={ item.name } action={ _item }>{ item.label }</X.Button>
 								<X.ActionTitle>{ _item }</X.ActionTitle>
@@ -81,7 +95,7 @@ export const Fields = () => (
 		<X.Title><X.No>04</X.No> Fields</X.Title>
 
 		<X.FlexBox alt="1">
-			{ Children.toArray(copy.fields.map((item) => (
+			{ Children.toArray(fields.map((item) => (
 				<X.FlexBox alt="2">
 					<X.VariantTitle>Field - { item.type }</X.VariantTitle>
 					<X.FlexBox alt="3">

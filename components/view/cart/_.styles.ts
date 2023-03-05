@@ -3,7 +3,7 @@ import { Layer } from '@/components/layout'
 import { Title, Text } from '@/components/blocks'
 
 export const FrameCart = tw(Layer)`
-	mt-4 flex gap-8 flex-col
+	flex gap-8 flex-col
 `
 
 export const CartHeader = tw.div`

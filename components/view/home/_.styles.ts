@@ -39,7 +39,7 @@ export const ProductCard = styled('div')<TProductCardStyle>(({ order }) => [
 		[&>*]:text-white text-center [&>h2]:whitespace-pre-line
 		)
 		lg:(
-			flex-row [&>*]:flex-1
+			h-[23rem] flex-row [&>*]:flex-1
 			[&>*[data-image]]:[&>img]:(mx-auto w-72)
 			[&>*[data-content]]:(
 				pl-24 text-start place-items-start
@@ -48,7 +48,7 @@ export const ProductCard = styled('div')<TProductCardStyle>(({ order }) => [
 	`,
 
 	(order === 1) && tw`
-		px-6 py-10 h-80
+		px-6 py-10 h-[23rem]
 		rounded-lg bg-dominant-4 overflow-hidden
 		relative [&>*[data-image]]:(
 			w-full h-full absolute bottom-0 right-0
@@ -66,7 +66,7 @@ export const ProductCard = styled('div')<TProductCardStyle>(({ order }) => [
 		[&>*]:(flex-1 rounded-lg)
 		[&>*[data-image]]:(
 			bg-complement-3 overflow-hidden
-			[&>img]:(w-full h-80 object-cover pointer-events-none)
+			[&>img]:(w-full object-cover aspect-video pointer-events-none)
 		)
 		[&>*[data-content]]:(
 			px-6 py-10 bg-dominant-3
@@ -80,5 +80,9 @@ export const ProductCard = styled('div')<TProductCardStyle>(({ order }) => [
 ])
 
 export const ProductImage = tw.img``
+
+// export const BgImage = tw.img`
+// 	border absolute top-0 left-0 w-[100%]!
+// `
 
 export const ProductDetail = tw(Text)`opacity-75 w-[35ch] max-w-full`

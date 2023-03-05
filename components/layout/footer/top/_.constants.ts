@@ -1,6 +1,6 @@
 import { InfoIcon } from '@/components/blocks'
 
-export const contentTop = {
+export const copy = {
 	closing_text: `
 		Audiophile is an all in one stop to fulfill your audio needs.
 		We're a small team of music lovers and sound specialists who
@@ -9,7 +9,9 @@ export const contentTop = {
 	`,
 
 	copyright: 'Copyright 2021. All Rights Reserved',
+}
 
+export const content = {
 	social_links: [
 		{ title: 'Facebook',	icon: InfoIcon.FacebookAlt,		link: '#' },
 		{ title: 'Twitter',		icon: InfoIcon.TwitterAlt,		link: '#' },

@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import { Children } from 'react'
 import { Icon, Link } from '@/components/blocks'
 import { paths_nav } from '@/src'
-import { contentTop } from './_.constants'
+import { copy, content } from './_.constants'
 import * as X from './_.styles'
 
 const Top = () => (
@@ -21,11 +21,11 @@ const Top = () => (
 				))) }
 			</X.MenuList>
 
-			<X.ClosingText base="true" mode="light">{ contentTop.closing_text }</X.ClosingText>
-			<X.Copyright base="true" mode="light">{ contentTop.copyright }</X.Copyright>
+			<X.ClosingText base="true" mode="light">{ copy.closing_text }</X.ClosingText>
+			<X.Copyright base="true" mode="light">{ copy.copyright }</X.Copyright>
 
 			<X.SocialList>
-				{ Children.toArray(contentTop.social_links.map((item) => (
+				{ Children.toArray(content.social_links.map((item) => (
 					<li><Link mode="light" href={ item.link }>{ item.icon() }</Link></li>
 				))) }
 			</X.SocialList>

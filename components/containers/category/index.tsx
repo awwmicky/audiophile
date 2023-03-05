@@ -6,19 +6,11 @@ import * as X from './_.styles'
 
 const link_text = 'Shop'
 
-const cardProps = {
-	isPressable: true,
-	isHoverable: true,
-	disableRipple: true,
-	variant: "flat" as const,
-	className: "group",
-}
-
 const Category = () => (
 	<X.Frame>
 		{ Children.toArray(content.map((item) => (
 			<NextLink href={ item.link }>
-				<X.Card { ...cardProps }>
+				<X.Card className="group">
 					<X.Image src={ item.image } alt={`Category-${ item.title }`} />
 					<X.Category base="true">{ item.title }</X.Category>
 					<Link as="button" variant="alt">{ link_text }</Link>

@@ -1,6 +1,5 @@
 export const content = {
-	image: '/assets/images/shared/desktop/image-best-gear.jpg',
-	// title: 'Bringing you the best audio gear',
+	image: '/assets/images/shared/about-image.jpg',
 	title: ['Bringing you the ', <span>best</span>, ' audio gear'],
 	description: `
 		Located at the heart of New York City, Audiophile is the

@@ -1,7 +1,7 @@
-import NextLink from 'next/link'
+// import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 import { Children } from 'react'
 import { Button as UIButton } from '@nextui-org/react'
-// import { useStoreState } from 'easy-peasy'
 import { Counter } from '@/components/shared'
 import { Title, Text, Icon, Button } from '@/components/blocks'
 import { root_path, currency } from '@/src'
@@ -10,6 +10,7 @@ import { copy, buttonProp } from './_.constants'
 import * as X from './_.styles'
 
 const Cart = () => {
+	const navigate = useRouter().push
 	const { cartList, totalCartQty, totalPrice } = useStoreState((state) => ({
 		cartList: state.cartList,
 		totalCartQty: state.totalCartQty,
@@ -31,9 +32,11 @@ const Cart = () => {
 			{ (!cartList.length) ? (
 				<X.CartEmpty>
 					<Title h4>{ copy.empty_cart.title }</Title>
-					<NextLink href={ root_path.product }>
-						<Button variant="filled-alt">{ copy.empty_cart.btn_text }</Button>
-					</NextLink>
+					<Button
+						variant="filled-alt"
+						label={ copy.empty_cart.btn_text }
+						onPress={ () => navigate(root_path.product) }
+					/>
 				</X.CartEmpty>
 			) : (
 			<>
@@ -48,14 +51,14 @@ const Cart = () => {
 							<UIButton
 								{ ...buttonProp }
 								icon={ <Icon.Remove size={16} /> }
-								data-remove-btn
 								onPress={ () => onRemoveFromCart({ id: index }) }
+								data-remove-btn
 							/>
 							<Counter
 								max={ item.qty }
 								value={ item.cart_qty }
-								data-counter-field
 								setCount={ (cb) => onUpdateCartQty({ id: index, qty: cb(item.cart_qty) }) }
+								data-counter-field
 							/>
 						</X.CartItem>
 					))) }
@@ -64,7 +67,11 @@ const Cart = () => {
 				<X.CartFooter>
 					<Text base="true">{ copy.total_line }</Text>
 					<Text base="true">{ currency.format(totalPrice) }</Text>
-					<Button variant="filled">{ copy.checkout_btn_text }</Button>
+					<Button
+						variant="filled"
+						label={ copy.checkout_btn_text }
+						onPress={ () => navigate(root_path.checkout) }
+					/>
 				</X.CartFooter>
 			</>
 			) }

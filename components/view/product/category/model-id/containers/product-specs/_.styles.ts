@@ -22,7 +22,7 @@ export const Title = tw(UITitle)`
 /*  */
 
 export const Detail = tw(Text)`
-	flex gap-4 flex-col opacity-50
+	flex gap-4 flex-col opacity-50 whitespace-pre-line
 `
 
 /*  */

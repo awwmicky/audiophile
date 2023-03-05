@@ -1,7 +1,9 @@
 import tw from 'twin.macro'
-import { Layer } from '../../layer'
+// import { Layer } from '@/components/layout/layer'
+// @/components/layout/layer
 
-export const Frame = tw(Layer)`
+export const Frame = tw.div`
+	container mx-auto
 	grid md:grid-cols-2
 `
 

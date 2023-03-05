@@ -1,5 +1,4 @@
 import type { FCC, HTMLAttributes } from 'react'
-// import { useState } from 'react'
 import { Icon } from '@/components/blocks'
 import * as X from './_.styles'
 
@@ -41,11 +40,11 @@ const Counter: FCC<IPCounter> = ({
 			<X.FieldInput
 				type="number"
 				id="counter"
-				disabled={ disabled }
-				readOnly
 				tabIndex={-1}
+				disabled={ disabled }
 				value={ value }
 				aria-label="counter"
+				readOnly
 			/>
 
 			<X.FieldButton

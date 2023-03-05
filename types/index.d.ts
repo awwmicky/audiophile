@@ -9,24 +9,25 @@ export interface IProduct {
 	qty: number
 }
 
-export interface IProductHighlight
-	extends	Pick<IProduct, 'image' | 'name' | 'model'> {
-		new?: boolean
-		description?: string
-}
-
-export interface IProductDetail
+export interface ICategoryItem
 	extends IProduct {
 		new?: boolean
-		feature_description: string
+}
+
+export interface IDetailItem {
+	details: IProduct & { new?: boolean },
+	specs: {
+		features_description: string,
 		deliverables_list: Array<{
-			pre: string
-			text: string
+			amount: number,
+			label: string,
 		}>
-		gallery: Array<string>
-		recommended_list: Array<{
-			image: string
-			name: string
-			link: string
-		}>
+	},
+	gallery: Array<string>,
+	recommended: Array<{
+		image: string,
+		name: string,
+		model: string,
+		category: 'speakers' | 'headphones' | 'earphones',
+	}>,
 }

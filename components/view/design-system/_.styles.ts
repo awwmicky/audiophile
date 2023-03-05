@@ -2,10 +2,6 @@ import tw, { styled } from 'twin.macro'
 // import tw from 'twin.macro'
 // import { motion } from 'framer-motion'
 
-export const Name = tw.h1`
-	text-5xl font-bold tracking-widest uppercase text-right
-`
-
 export const Section = tw.section``
 
 export const Title = tw.h2`
@@ -75,7 +71,7 @@ export const TypeName = tw.p`font-default text-4xl uppercase font-bold`
 export const TypeAlphabet = tw.p`
 	inline-flex flex-col
 	font-default text-xl font-bold opacity-50
-
+	whitespace-pre-line
 `
 
 export const TypeSpecs = tw.p`opacity-50`
@@ -120,7 +116,7 @@ export const TypeSample = styled('p')<PTypeSample>(({ variant }) => [
 /* BUTTONS */
 
 type PButton = {
-	variant?: 'filled' | 'outline' | 'subtle'
+	variant?: 'filled' | 'filled-alt' | 'outline' | 'subtle'
 	action?: 'default' | 'hover' | 'active' | 'loading' | 'disabled'
 }
 export const Button = styled('button')<PButton>(({ variant, action }) => [

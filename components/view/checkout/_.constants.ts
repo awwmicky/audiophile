@@ -1,9 +1,16 @@
 export const content = {
-	title: 'Thank you\nfor your order',
-	description: 'You will receive an email confirmation shortly.',
 	total_text: 'Grand Total',
-	btn_text: 'Back to Home',
+	btn_text: 'Continue shopping',
 	/*  */
+	successful: {
+		title: 'Thank you\nfor your order',
+		description: 'You will receive an email confirmation shortly.',
+		btn_text: 'Continue shopping',
+	},
+	cancelled: {
+		title: 'Oh no,\nsomething went wrong',
+		description: 'Try to buy again when you are ready to make a purchase.',
+	},
 }
 
 export const mock_order = [

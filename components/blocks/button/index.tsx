@@ -1,10 +1,12 @@
 import type { DetailedHTMLProps, ButtonHTMLAttributes, ReactNode } from 'react' // HTMLProps
 import { forwardRef } from 'react'
-import type { AsProp } from '@nextui-org/react'
+import type { ButtonProps } from '@nextui-org/react'
 import { Icon } from '../'
 import { FrameButton, type TButtonStyle } from './_.styles'
 
-type TButtonAttrs = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & TButtonStyle & AsProp
+type TButtonAttrs =
+	DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+	& TButtonStyle & ButtonProps
 interface IPButton extends TButtonAttrs {
 	label?: string | ReactNode
 }

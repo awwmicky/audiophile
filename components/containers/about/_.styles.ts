@@ -1,14 +1,16 @@
 import tw from 'twin.macro'
-import { Layer } from '@/components/layout/layer'
+// import { Layer } from '@/components/layout/layer'
 import { Title as UITitle, Text as UIText } from '@/components/blocks'
 
-export const Frame = tw(Layer)`
+export const Frame = tw.div`
+	container mx-auto
 	flex gap-10 flex-col place-items-center
 	lg:(flex-row place-content-between [&>img]:order-2)
 `
 
 export const Image = tw.img`
-	rounded-lg
+	aspect-square rounded-lg
+	lg:w-[30%]
 `
 
 export const Box = tw.div`

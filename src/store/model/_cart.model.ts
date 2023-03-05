@@ -1,8 +1,8 @@
 import type { Action, Computed } from 'easy-peasy'
 import { action, computed } from 'easy-peasy'
 import { toast } from 'react-hot-toast'
-import { mock_cart } from '@/components/view/cart/_.constants'
 import type { IProduct } from '@/types'
+// import { mock_cart } from '@/components/view/cart/_.constants'
 
 interface ICartItem extends IProduct {
 	cart_qty: number
@@ -21,18 +21,18 @@ export interface ICartModel {
 	onRemoveFromCart: Action<this, { id: number }>
 }
 
+const message = {
+	issue1: (name: string) => toast(`${ name }\n is out of stock.`, { icon: '⚠' }),
+	issue2: (name: string, qty: number) => toast(`${ name }\n has a max limit of ${ qty }.`, { icon: '⚠' }),
+	success: (name: string, qty: number) => toast.success(`${ qty } ${ name }\nadded to the cart.`),
+}
+
 const initialCartState: Pick<ICartModel, 'cartList'> = {
 	cartList: [],
 }
 
-const message = {
-	case1: (name: string) => toast(`${ name }\n is out of stock.`, { icon: '⚠' }),
-	case2: (name: string, qty: number) => toast(`${ name }\n has a max limit of ${ qty }.`, { icon: '⚠' }),
-	success: (name: string, qty: number) => toast.success(`${ qty } ${ name }\nadded to the cart.`),
-}
-
 const cartStore: ICartModel = {
-	cartList: mock_cart,
+	cartList: [],
 	totalCartQty: computed((state) => (
 		state.cartList.reduce((acc, curr) => (acc + curr.cart_qty), 0)
 	)),
@@ -50,10 +50,10 @@ const cartStore: ICartModel = {
 		const cartItem = state.cartList[cartId]
 
 		if (!cartItem) {
-			if (!product.qty) { message.case1(product.name); return }
+			if (!product.qty) { message.issue1(product.name); return }
 			state.cartList.push({ ...product, cart_qty: qty })
 		} else {
-			if (cartItem.cart_qty + qty > product.qty) { message.case2(product.name, product.qty); return }
+			if (cartItem.cart_qty + qty > product.qty) { message.issue2(product.name, product.qty); return }
 			cartItem.cart_qty += qty
 		}
 

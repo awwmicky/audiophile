@@ -1,5 +1,5 @@
-export * from './view'
+export * from './blocks'
 export * from './layout'
 export * from './containers'
 export * from './shared'
-export * from './blocks'
+export * from './view'

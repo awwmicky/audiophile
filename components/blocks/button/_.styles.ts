@@ -3,8 +3,8 @@ import tw, { styled } from 'twin.macro'
 
 export type TButtonStyle = {
 	variant?: 'default' | 'filled' | 'filled-alt' | 'outline' | 'subtle'
+	loading?: 'true' | 'false' | boolean
 	disabled?: boolean
-	loading?: 'true' | 'false'
 }
 
 // px-6

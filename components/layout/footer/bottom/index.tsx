@@ -1,26 +1,26 @@
 import { Children } from 'react'
 import { Link } from '@/components/blocks'
-import { contentBottom } from './_.constants'
+import { copy, content } from './_.constants'
 import * as X from './_.styles'
 
 const Bottom = () => (
-	<div className="bg-[#101010]/40">
+	<div className="bg-complement-3">
 		<X.Frame>
 			<div>
-				<X.Title>{ contentBottom.text.techUsed }</X.Title>
+				<X.Title>{ copy.techUsed }</X.Title>
 				<X.List>
-					{ Children.toArray(contentBottom.technologies.map((item) => (
+					{ Children.toArray(content.technologies.map((item) => (
 						<li><Link newTab mode="light" title={ item.title } href={ item.link }>{ item.icon() }</Link></li>
 					))) }
 				</X.List>
 			</div>
 
 			<div>
-				<X.Title>{ contentBottom.text.moreInfo }</X.Title>
+				<X.Title>{ copy.moreInfo }</X.Title>
 				<X.List>
-					{ Children.toArray(contentBottom.moreInfo.map((item) => (
+					{ Children.toArray(content.moreInfo.map((item, index) => (
 						<>
-							{ item.title === 'Repository' && <hr /> }
+							{ (index === content.moreInfo.length-1) && <hr /> }
 							<li><Link newTab mode="light" title={ item.title } href={ item.link }>{ item.icon() }</Link></li>
 						</>
 					))) }
@@ -28,7 +28,7 @@ const Bottom = () => (
 			</div>
 
 			<X.ClosingText>
-				<code>{ contentBottom.text.madeBy }</code>
+				<code>{ copy.madeBy }</code>
 			</X.ClosingText>
 		</X.Frame>
 	</div>

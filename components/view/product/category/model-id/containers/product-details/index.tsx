@@ -1,16 +1,20 @@
-import { type FCC, useState } from 'react'
+import { type FC, useState } from 'react'
 import { Counter } from '@/components/shared/field'
 import { Text, Button } from '@/components/blocks'
 import { useStoreActions } from '@/src/store'
 import { currency } from '@/src/_utils'
+import type { IDetailItem } from '@/types'
 import * as X from './_.styles'
 import { copy, mock_product } from '../../_.constants'
 
 interface IPProductDetails {
 	modelId?: string | string[]
+	details: Pick<IDetailItem, 'details'>
 }
 
-const ProductDetails: FCC<IPProductDetails> = ({ modelId }) => {
+const ProductDetails: FC<IPProductDetails> = ({
+	modelId, details
+}) => {
 	const [ cartQty, setCartQty ] = useState(1)
 	const onAddtoCart = useStoreActions((state) => state.onAddToCart)
 
@@ -19,7 +23,7 @@ const ProductDetails: FCC<IPProductDetails> = ({ modelId }) => {
 			<X.ImageBox>
 				<X.Image
 					src={ mock_product.details.image }
-					alt={`Product-${ mock_product.details.name }`}
+					alt={`Product-${ mock_product.details.model }`}
 				/>
 			</X.ImageBox>
 

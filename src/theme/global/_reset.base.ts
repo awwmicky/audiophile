@@ -36,9 +36,10 @@ const BaseReset = createGlobalStyle({
 	'#nextui-modal': {
 		'&>.nextui-backdrop': {
 			overflow: 'hidden',
-			inset: 'unset',
 			width: `${ 100 }%`,
-			top: `${ 80 }px`,
+			height: `${ 100 }%`,
+			inset: 'unset',
+			top: `${ 0 }%`,
 			left: 0,
 			'&>.nextui-backdrop-layer': {
 				inset: 'unset',
@@ -46,7 +47,10 @@ const BaseReset = createGlobalStyle({
 				left: 0,
 			},
 			'&>.nextui-backdrop-content': {
+				cursor: 'initial',
 				marginBlock: 'auto',
+				position: 'fixed',
+				inset: '80px 0 auto 0',
 			},
 		},
 	}

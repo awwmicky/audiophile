@@ -1,16 +1,12 @@
 import { InfoIcon, TechIcon } from '@/components/blocks'
 
-// export const headerContent = {
-// 	brand_name: 'Frisko Wave',
-// }
+export const copy = {
+	moreInfo: 'For more info',
+	techUsed: 'Technologies used',
+	madeBy: 'Concept project made by Michael Alvarez',
+}
 
-export const contentBottom = {
-	text: {
-		moreInfo: 'For more info',
-		techUsed: 'Technologies used',
-		madeBy: 'Concept project made by Michael Alvarez',
-	},
-
+export const content = {
 	moreInfo: [
 		{ title: 'GitHub',			icon: InfoIcon.Github,			link: 'http://github.com/awwmicky' },
 		{ title: 'LinkedIn',		icon: InfoIcon.Linkedin,		link: 'http://linkedin.com/in/awwmicky/' },

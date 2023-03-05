@@ -1,4 +1,4 @@
-import type { SVGProps, HTMLAttributes } from 'react'
+import type { SVGProps } from 'react'
 import { forwardRef } from 'react'
 // import type { IconType } from 'react-icons'
 
@@ -8,6 +8,7 @@ import {
 } from '@nextui-org/react'
 
 import {
+	AiOutlineExclamation,
 	AiOutlineShoppingCart,
   AiOutlineMinus,
   AiOutlinePlus,
@@ -41,7 +42,8 @@ export const Minus = (props: IPIcons) => <AiOutlineMinus { ...props } />
 export const Menu = (props: IPIcons) => <GiHamburgerMenu size={25} { ...props } />
 export const CloseMenu = (props: IPIcons) => <VscChromeClose size={25} { ...props } />
 export const Cart = (props: IPIcons) => <AiOutlineShoppingCart size={25} { ...props } />
-export const Remove = (props: IPIcons) => <IoMdClose { ...props } />
+export const Remove = (props: IPIcons) => <IoMdClose size={ props?.size || 25} { ...props } />
+export const Cancelled = (props: IPIcons) => <AiOutlineExclamation size={ props?.size || 25} { ...props } />
 
 export const Check = (props: IPIcons) => <BiCheck size={ props?.size || 25} { ...props } />
 export const UpArrow = (props: IPIcons) => <BiChevronUp size={25} { ...props } />

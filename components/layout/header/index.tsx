@@ -1,11 +1,14 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Children } from 'react'
-import { useStoreState } from '@/src/store'
 import { Badge, Button, Modal, useModal } from '@nextui-org/react'
+import { theme } from 'twin.macro'
 import { Link, Icon } from '@/components/blocks'
-import { Category } from '../../containers'
+import { Category } from '@/components/containers'
+import { useStoreState } from '@/src/store'
+import { useEventListener } from '@/src/hooks'
 import { root_path, paths_nav } from '@/src/_path.routes'
+import { debounce } from '@/src/_utils'
 import * as X from './_.styles'
 
 const Header = () => (
@@ -27,14 +30,13 @@ const Branding = () => (
 )
 
 const CartMenu = () => {
+	const navigate = useRouter().push
 	const totalCartQty = useStoreState((state) => state.totalCartQty)
 
 	return (
-		<NextLink href={ root_path.cart } data-cart-menu>
-			<Badge content={ totalCartQty } isInvisible={ !totalCartQty } size="sm" placement="top-left">
-				<Button auto light icon={ <Icon.Cart /> } />
-			</Badge>
-		</NextLink>
+		<Badge content={ totalCartQty } isInvisible={ !totalCartQty } size="sm" placement="top-left" data-cart-menu>
+			<Button auto light icon={ <Icon.Cart /> } onPress={ () => navigate(root_path.cart) } />
+		</Badge>
 	)
 }
 
@@ -43,7 +45,6 @@ const NavBar = () => {
 
 	return (
 		<>
-			{/* <Button auto light icon={ <Icon.Menu /> } data-nav-btn /> */}
 			<NavMobile />
 			<X.NavMenu data-nav-menu>
 				{ Children.toArray(paths_nav.map((item) => (
@@ -64,13 +65,19 @@ const NavMobile = () => {
 	const { visible, setVisible, bindings } = useModal()
 	const toggleModal = () => setVisible((prev) => !prev)
 
+	useEventListener('resize', debounce(() => {
+		const DESKTOP_SIZE = parseInt(theme`screens.lg`, 10)
+		if (visible && (window.innerWidth <= DESKTOP_SIZE)) return null
+		if (visible && (window.innerWidth >= DESKTOP_SIZE)) setVisible(false)
+	}))
+
 	return (
 		<>
 			<Button
 				auto light
 				icon={ !visible ? <Icon.Menu /> : <Icon.CloseMenu /> }
-				data-nav-btn
 				onPress={ toggleModal }
+				data-nav-btn
 			/>
 			<Modal
 				closeButton

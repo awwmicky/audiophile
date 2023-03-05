@@ -12,11 +12,11 @@ export const colors = [
 export const typography = {
 	typeface: {
 		name: 'manrope',
-		alphabet: {
-			line1: 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ',
-			line2: 'a b c d e f g h i j k l m n o p q r s t u v w x y z ',
-			line3: '1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( ) _ +',
-		},
+		alphabet: [
+			'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z \n',
+			'a b c d e f g h i j k l m n o p q r s t u v w x y z \n',
+			'1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( ) _ +',
+		],
 	},
 	type_scale: {
 		h1: {
@@ -61,7 +61,8 @@ export const typography = {
 // 15 => 3 * 5
 export const buttons = {
 	variant: [
-		{ name: 'filled', label: 'checkout' } as const,
+		{ name: 'filled', label: 'click here' } as const,
+		{ name: 'filled-alt', label: 'checkout' } as const,
 		{ name: 'outline', label: 'see product' } as const,
 		{ name: 'subtle', label: 'shop' } as const,
 	],

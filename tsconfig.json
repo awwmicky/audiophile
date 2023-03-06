@@ -28,7 +28,15 @@
     "moduleResolution": "node",
     "plugins": [{ "name": "next" }]
   },
-  "include": ["next-env.d.ts", "types/react-app-env.d.types/twin.d.tsn.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "@types/index.d.ts",
+    "@types/react-app-env.d.ts",
+    "@types/twin.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [".next", "next.config.js", "node_modules", "dist", "build"],
   "extends": "./jsconfig.json"
 }

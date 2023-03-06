@@ -14,12 +14,7 @@ const ProductSpecs: FC<IPProductSpecs> = ({
 	<X.FrameSpecs>
 		<X.InnerBox data-features>
 			<X.Title h3>{ copy.features_title }</X.Title>
-			<X.Detail base="true">
-				{ mock_product.specs.features_description }
-				{/* { Children.toArray(mock_product.specs.features_description.map((item, index) => (
-					<span>{ item }</span>
-				)))} */}
-			</X.Detail>
+			<X.Detail base="true">{ mock_product.specs.features_description }</X.Detail>
 		</X.InnerBox>
 
 		<X.InnerBox data-deliverables>

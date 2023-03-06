@@ -3,7 +3,10 @@ import tw from 'twin.macro'
 import { Layer } from '@/components/layout'
 
 export const FrameCheckout = tw(Layer)`
-	flex gap-6 flex-col [&>h3]:whitespace-pre-line [&>p]:opacity-50
+	flex gap-6 flex-col
+	[&>h3]:whitespace-pre-line
+	[&>p]:opacity-50
+	lg:[&>button]:self-start
 `
 
 export const Circle = tw.div`
@@ -26,7 +29,7 @@ export const CardTop = tw.div`
 		text-lg font-bold opacity-50 justify-self-end
 	)
 	[&>*[data-price]]:([grid-area: 2 / 2 / auto / span 2]
-		font-bold opacity-50
+		font-bold opacity-50 first-letter:tracking-[0.5ch]
 	)
 	[&>*[data-line]]:([grid-area: 3 / 1 / auto / -1]
 		text-xs opacity-25
@@ -36,19 +39,13 @@ export const CardTop = tw.div`
 	)
 `
 
-export const ImageBox = tw.div`flex [&>img]:m-auto`
-export const Image = tw.img``
+export const ImageBox = tw.div`w-16 h-auto flex [&>img]:m-auto`
+export const Image = tw.img`w-full h-full object-cover pointer-events-none`
 
 /*  */
 
 export const CardBottom = tw.div`
 	p-6 flex gap-2 flex-col place-content-center bg-black
 	[&>*:nth-child(1)]:(uppercase opacity-50)
-	[&>*:nth-child(2)]:(text-lg font-bold)
-`
-
-export const Link = tw(NextLink)`
-	basis-full
-	[&>button]:w-full
-	lg:(self-center)
+	[&>*:nth-child(2)]:(text-lg font-bold first-letter:tracking-[0.5ch])
 `

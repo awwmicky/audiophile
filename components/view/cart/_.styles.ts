@@ -43,10 +43,10 @@ export const CartItem = tw.div`
 
 export const ImageBox = tw.div`
 	bg-dominant-3 rounded-lg overflow-hidden
-	flex [&>img]:m-auto
+	w-28 h-auto flex [&>img]:m-auto
 `
-export const Image = tw.img`pointer-events-none`
-export const Price = tw(Text)`text-sm font-bold opacity-50`
+export const Image = tw.img`w-full h-full object-cover pointer-events-none`
+export const Price = tw(Text)`text-sm font-bold opacity-50 first-letter:tracking-[0.5ch]`
 
 /*  */
 
@@ -54,7 +54,7 @@ export const CartFooter = tw.div`
 	sticky -bottom-[2px] bg-white z-[5]
 	py-6 flex gap-6 flex-wrap place-content-between
 	[&>*:nth-child(1)]:(uppercase opacity-50)
-	[&>*:nth-child(2)]:(font-bold)
+	[&>*:nth-child(2)]:(font-bold first-letter:tracking-[0.5ch])
 	[&>*:nth-child(3)]:(basis-full)
 	lg:(ml-auto w-72)
 `

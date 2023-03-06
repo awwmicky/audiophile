@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import type { FCC } from 'react'
 import { Title, Text, Button, Icon } from '@/components/blocks'
 import { root_path, currency } from '@/src'
-import { content, mock_order } from './_.constants'
+import { copy, mock_order } from './_.constants'
 import * as X from './_.styles'
 
 const init_cart_total = mock_order.length
@@ -24,8 +24,8 @@ const Checkout: FCC<IPCheckout> = ({ status }) => {
 	return (
 		<X.FrameCheckout>
 			<X.Circle>{ IconStatus }</X.Circle>
-			<Title h3>{ content[status].title }</Title>
-			<Text base="true">{ content[status].description }</Text>
+			<Title h3>{ copy[status].title }</Title>
+			<Text base="true">{ copy[status].description }</Text>
 
 			{ orderStatus && (
 				<X.OrderCard>
@@ -48,7 +48,7 @@ const Checkout: FCC<IPCheckout> = ({ status }) => {
 					</X.CardTop>
 
 					<X.CardBottom>
-						<Text base="true" mode="light">{ content.total_text }</Text>
+						<Text base="true" mode="light">{ copy.total_text }</Text>
 						<Text base="true" mode="light">{ currency.format(init_subtotal) }</Text>
 					</X.CardBottom>
 				</X.OrderCard>
@@ -56,7 +56,7 @@ const Checkout: FCC<IPCheckout> = ({ status }) => {
 
 			<Button
 				variant="filled"
-				label={ content.btn_text }
+				label={ copy.btn_text }
 				onPress={ () => navigate(root_path.product) }
 			/>
 		</X.FrameCheckout>

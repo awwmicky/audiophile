@@ -1,11 +1,11 @@
-export const content = {
+
+export const copy = {
 	total_text: 'Grand Total',
 	btn_text: 'Continue shopping',
 	/*  */
 	successful: {
 		title: 'Thank you\nfor your order',
 		description: 'You will receive an email confirmation shortly.',
-		btn_text: 'Continue shopping',
 	},
 	cancelled: {
 		title: 'Oh no,\nsomething went wrong',
@@ -15,21 +15,19 @@ export const content = {
 
 export const mock_order = [
 	{
-		image: '/assets/images',
-		name: 'XX99 KM II',
+		image: '/assets/images/temp/xx99-mark-two-headphones.png',
+		name: 'XX99 Mark II',
+		model: 'xx99-mk-ii',
+		category: 'headphones' as const,
 		price: 2999,
 		qty: 1,
 	},
 	{
 		image: '/assets/images',
-		name: 'XX99 KM II',
+		name: 'XX99 Mark I',
+		model: 'xx99-mk-i',
+		category: 'headphones' as const,
 		price: 899,
 		qty: 2,
-	},
-	{
-		image: '/assets/images',
-		name: 'XX99 KM II',
-		price: 599,
-		qty: 1,
 	},
 ]

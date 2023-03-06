@@ -1,6 +1,5 @@
-import tw, { styled } from 'twin.macro'
+import tw from 'twin.macro'
 import { Layer } from '@/components/layout'
-import { Text } from '@/components/blocks'
 
 export const FrameRecommended = tw(Layer)`
 	[&>h3]:(mb-10 text-center)
@@ -17,9 +16,9 @@ export const Card = tw.div`
 `
 
 export const ImageBox = tw.div`
-w-full h-32 flex [&>img]:m-auto
-bg-dominant-3 rounded-lg pointer-events-none
-md:h-80
+	w-full h-32 flex [&>img]:m-auto
+	bg-dominant-3 rounded-lg
+	md:h-80
 `
 
-export const Image = tw.img``
+export const Image = tw.img`w-full h-full object-contain pointer-events-none`

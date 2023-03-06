@@ -21,10 +21,7 @@ const ProductDetails: FC<IPProductDetails> = ({
 	return (
 		<X.FrameDetails>
 			<X.ImageBox>
-				<X.Image
-					src={ mock_product.details.image }
-					alt={`Product-${ mock_product.details.model }`}
-				/>
+				<X.Image src={ mock_product.details.image } alt="Product"	/>
 			</X.ImageBox>
 
 			<X.ContentBox>
@@ -47,7 +44,7 @@ const ProductDetails: FC<IPProductDetails> = ({
 						<Button
 							variant="filled"
 							label={ copy.details.btn_text }
-							onClick={ () => onAddtoCart({ product: mock_product.details, qty: cartQty }) }
+							onPress={ () => onAddtoCart({ product: mock_product.details, qty: cartQty }) }
 						/>
 					</X.ActionBox>
 				)}

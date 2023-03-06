@@ -7,7 +7,9 @@ interface IPProductGallery {
 	gallery: Pick<IDetailItem, 'gallery'>
 }
 
-const ProductGallery: FC<IPProductGallery> = ({ gallery }) => (
+const ProductGallery: FC<IPProductGallery> = ({
+	gallery
+}) => (
 	<X.FrameGallery>
 		{ Children.toArray(mock_product.gallery.map((item, index) => (
 			<X.ImageBox>

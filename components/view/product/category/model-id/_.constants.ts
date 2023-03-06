@@ -1,4 +1,3 @@
-// import { root_path } from '@/src/_.routes'
 
 export const copy = {
 	details: {
@@ -14,7 +13,7 @@ export const copy = {
 export const mock_product = {
 	details: {
 		new: true,
-		image: '/assets/images',
+		image: '/assets/images/temp/xx99-mark-two-headphones.png',
 		name: 'XX99 Mark II\nHeadphones',
 		model: 'xx99-mk-ii',
 		category: 'headphones' as const,
@@ -54,28 +53,28 @@ export const mock_product = {
 	},
 
 	gallery: [
-		'/assets/images',
-		'/assets/images',
-		'/assets/images',
+		'/assets/images/temp/gallery-1.jpg',
+		'/assets/images/temp/gallery-2.jpg',
+		'/assets/images/temp/gallery-3.jpg',
 	],
 
 	recommended: [
 		{
-			image: '/assets/images',
+			image: '/assets/images/temp/xx99-mark-one-headphones.png',
 			name: 'XX99 Mark I',
 			model: 'xx99-mk-i',
 			category: 'headphones' as const,
 		},
 		{
-			image: '/assets/images',
-			name: 'XX59',
+			image: '/assets/images/temp/xx59-headphones.png',
+			name: 'XX59 Headphone',
 			model: 'xx59',
 			category: 'headphones' as const,
 		},
 		{
-			image: '/assets/images',
+			image: '/assets/images/temp/zx9-speaker.png',
 			name: 'ZX9 Speaker',
-			model: 'zx9-s',
+			model: 'zx9',
 			category: 'speakers' as const,
 		},
 	],

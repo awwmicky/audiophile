@@ -23,7 +23,7 @@ const ProductRecommended: FC<IPProductRecommended> = ({
 				{ Children.toArray(mock_product.recommended.map((item, index) => (
 					<X.Card>
 						<X.ImageBox>
-							<X.Image src={ item.image } alt={`Product-${index}`} />
+							<X.Image src={ item.image } alt={`Recommend-${index}`} />
 						</X.ImageBox>
 
 						<Title h4>{ item.name }</Title>

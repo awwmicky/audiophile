@@ -9,7 +9,8 @@ export const FrameTop = tw.div`
 /*  */
 
 export const FrameCategory = tw(Layer)`
-	mb-8 flex gap-32 flex-col
+	mb-8
+	flex gap-32 flex-col
 `
 
 type TSectionStyle = { order?: number }
@@ -28,8 +29,8 @@ export const Section = styled('section')<TSectionStyle>(({ order }) => [
 ])
 
 export const ImageBox = tw.div`
-	flex [&>*]:m-auto
-	rounded-lg bg-dominant-3
+	h-[350px] flex [&>img]:m-auto rounded-lg bg-dominant-3
+	lg:h-[560px]
 `
 
 export const ContentBox = tw.div`
@@ -37,7 +38,7 @@ export const ContentBox = tw.div`
 	lg:(place-items-start text-start)
 `
 
-export const Image = tw.img``
+export const Image = tw.img`w-full h-full object-contain pointer-events-none`
 export const Overline = tw(Text)`text-accent-1`
 export const Name = tw(Title)`whitespace-pre-line`
 export const Detail = tw(Text)`my-4 max-w-[60ch] opacity-50`

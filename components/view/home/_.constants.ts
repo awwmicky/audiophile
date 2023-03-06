@@ -1,41 +1,40 @@
-import { root_path } from '@/src/_.routes'
 
 export const mock_hero = {
-	// new: true,
-	overline: 'New product',
+	new: true,
+	image: '/assets/images/temp/home--hero-image.png',
 	name: 'XX99 Mark II\nHeadphones',
-	detail: `
+	model: 'xx99-mk-ii',
+	category: 'headphones' as const,
+	description: `
 		Experience natural, life-like audio and exceptional
 		build quality made for the passionate music enthusiast.
 	`,
-	link: `${ root_path.product }/headphones/XX99MIIH`, // /model-id
-	image: '/assets/images/home/hero-image.jpg',
 }
 
 export const mock_product = [
 	{
 		id: 1,
+		image: '/assets/images/temp/home--zx9-speaker.png',
 		name: 'ZX9\nSpeaker',
-		detail: `
+		model: 'zx9',
+		category: 'speakers' as const,
+		description: `
 			Upgrade to premium speakers that are phenomenally
 			built to deliver truly remarkable sound.
 		`,
-		image: '/assets/images/home/speaker-zx9.png',
-		link: `${ root_path.product }/speakers`, // /model-id
-		btn_variant: 'filled-alt' as const,
 	},
 	{
 		id: 2,
+		image: '/assets/images/temp/home--zx7-speaker.jpg',
 		name: 'ZX7 Speaker',
-		image: '/assets/images/home/speaker-zx7.jpg',
-		link: `${ root_path.product }/speakers`, // /model-id
-		btn_variant: 'outline' as const,
+		model: 'zx7',
+		category: 'speakers' as const,
 	},
 	{
 		id: 3,
+		image: '/assets/images/temp/home--yx1-earphones.jpg',
 		name: 'YX1 Earphones',
-		image: '/assets/images/home/earphones-yx1.jpg',
-		link: `${ root_path.product }/earphones`, // /model-id
-		btn_variant: 'outline' as const,
+		model: 'yx1',
+		category: 'earphones' as const,
 	},
 ]

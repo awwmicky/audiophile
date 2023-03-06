@@ -1,8 +1,10 @@
+import { RootLayer } from '@/components/layout'
+import { ProductList } from '@/components/view/product'
 
 const ProductPage = () => (
-	<div>
-		<h1>Product Page</h1>
-	</div>
+	<RootLayer>
+		<ProductList />
+	</RootLayer>
 )
 
 export default ProductPage

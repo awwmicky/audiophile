@@ -2,7 +2,7 @@ const path = require('path')
 
 // The folders containing files importing twin.macro
 const includedDirectories = [
-  path.resolve(__dirname, '../app'),
+  // path.resolve(__dirname, '../app'),
   path.resolve(__dirname, '../components'),
   path.resolve(__dirname, '../pages'),
   path.resolve(__dirname, '../src'),

@@ -14,10 +14,16 @@ const meta = {
 		zustand, react-hook-form, contentful, stripe
 	`,
 	author: 'Michael Fred Alvarez; @awwmicky',
-	image: isProd ? '/' : '/_',
+	image: isProd ? '/meta/' : '/meta/_',
 	alt: 'Audiophile - E-Commerce App',
 	link: 'https://audiophile-app.vercel.app/',
 }
+
+const faviconLogo = [
+	{ rel: 'icon', type: 'image/x-icon', href: `${ meta.image }favicon.ico` },
+	{ rel: 'apple-touch-icon', type: 'image/png', href: `${ meta.image }favicon.png` },
+	{ rel: 'mask-icon', type: 'image/svg+xml', href: `${ meta.image }favicon.svg` },
+]
 
 const ogContent = [
 	{ property: 'og:type', content: 'website' },
@@ -86,10 +92,7 @@ class Document extends NextDocument {
 					<meta name="keywords" content={ meta.keywords } />
 					<meta name="author" content={ meta.author } />
 
-					<link rel="icon" type="image/x-icon" href={ `${ meta.image }favicon.ico` } />
-					<link rel="apple-touch-icon" type="image/png" href={ `${ meta.image }favicon.png` } />
-					<link rel="mask-icon" type="image/svg+xml" href={ `${ meta.image }favicon.svg` } />
-
+					{ Children.toArray(faviconLogo.map((item) => <link { ...item } />	)) }
 					{ Children.toArray(ogContent.map((item) => <meta { ...item } /> )) }
 					{ Children.toArray(altOgContent.map((item) => <meta { ...item } /> )) }
 

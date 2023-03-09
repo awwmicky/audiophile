@@ -11,7 +11,7 @@ interface IPCategoryTop {
 	category?: string | string[]
 }
 
-interface IPProductCategory {
+interface IPCategory {
 	productList: Array<ICategoryItem>
 }
 
@@ -23,7 +23,7 @@ export const CategoryTop: FC<IPCategoryTop> = ({ category }) => (
 	</X.FrameTop>
 )
 
-export const CategoryItem: FC<IPProductCategory> = ({ productList }) => {
+export const CategoryItem: FC<IPCategory> = ({ productList }) => {
 	const navigate = useRouter().push
 
 	return (

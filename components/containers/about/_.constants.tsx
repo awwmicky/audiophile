@@ -1,3 +1,4 @@
+
 export const content = {
 	image: '/assets/images/shared/about-image.jpg',
 	title: ['Bringing you the ', <span>best</span>, ' audio gear'],

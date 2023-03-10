@@ -1,4 +1,4 @@
-import tw, { styled } from 'twin.macro'
+import tw from 'twin.macro'
 import { Layer } from '@/components/layout'
 import { Title, Text } from '@/components/blocks'
 

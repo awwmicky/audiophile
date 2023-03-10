@@ -13,7 +13,8 @@ interface IPProductDetails {
 }
 
 const ProductDetails: FC<IPProductDetails> = ({
-	modelId, details
+	modelId,
+	// details
 }) => {
 	const [ cartQty, setCartQty ] = useState(1)
 	const onAddtoCart = useStoreActions((state) => state.onAddToCart)

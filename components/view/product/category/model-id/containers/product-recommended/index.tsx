@@ -12,7 +12,7 @@ interface IPProductRecommended {
 }
 
 const ProductRecommended: FC<IPProductRecommended> = ({
-	recommended
+	// recommended
 }) => {
 	const navigate = useRouter().push
 

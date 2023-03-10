@@ -9,7 +9,7 @@ interface IPProductSpecs {
 }
 
 const ProductSpecs: FC<IPProductSpecs> = ({
-	specs
+	// specs
 }) => (
 	<X.FrameSpecs>
 		<X.InnerBox data-features>

@@ -8,7 +8,7 @@ interface IPProductGallery {
 }
 
 const ProductGallery: FC<IPProductGallery> = ({
-	gallery
+	// gallery
 }) => (
 	<X.FrameGallery>
 		{ Children.toArray(mock_product.gallery.map((item, index) => (

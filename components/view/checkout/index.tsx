@@ -3,22 +3,20 @@ import { useRouter } from 'next/router'
 import type { FCC } from 'react'
 import { Title, Text, Button, Icon } from '@/components/blocks'
 import { root_path, currency } from '@/src'
-import { copy, mock_order } from './_.constants'
+import { copy } from './_.constants'
 import * as X from './_.styles'
-
-const init_cart_total = mock_order.length
-
-const init_subtotal = mock_order.reduce((acc, curr) => (
-	acc + (curr.qty * curr.price)
-), 0)
+import { IOrder } from '@/types'
 
 interface IPCheckout {
 	status: "successful" | "cancelled"
+	order?: IOrder
 }
 
-const Checkout: FCC<IPCheckout> = ({ status }) => {
+const Checkout: FCC<IPCheckout> = ({
+	status, order
+}) => {
 	const navigate = useRouter().push
-	const orderStatus = (status === 'successful') && Boolean(mock_order.length)
+	const orderStatus = order && Boolean(order?.cart.length)
 	const IconStatus = (status === 'successful') ? <Icon.Check size={ 40 } /> : <Icon.Cancelled size={ 40 } />
 
 	return (
@@ -31,17 +29,17 @@ const Checkout: FCC<IPCheckout> = ({ status }) => {
 				<X.OrderCard>
 					<X.CardTop>
 						<X.ImageBox data-image-box>
-							<X.Image src={ mock_order[0].image } alt="Order-0" />
+							<X.Image src={ order.cart[0].image } alt="Order-0" />
 						</X.ImageBox>
-						<Title h5 data-name>{ mock_order[0].name }</Title>
-						<Text base="true" data-quantity>x{ mock_order[0].qty }</Text>
-						<Text base="true" data-price>{ currency.format(mock_order[0].price) }</Text>
-						{ (init_cart_total > 1) && (
+						<Title h5 data-name>{ order.cart[0].name }</Title>
+						<Text base="true" data-quantity>x{ order.cart[0].cart_qty }</Text>
+						<Text base="true" data-price>{ currency.format(order.cart[0].price) }</Text>
+						{ (order.cart_total > 1) && (
 							<>
 								<hr data-line />
 								<Text base="true" data-other>
-									and {`${ init_cart_total-1 } `}
-									other item{ (init_cart_total-1 > 1) && '(s)' }
+									and {`${ order.cart_total-1 } `}
+									other item{ (order.cart_total-1 > 1) && '(s)' }
 								</Text>
 							</>
 						)}
@@ -49,7 +47,7 @@ const Checkout: FCC<IPCheckout> = ({ status }) => {
 
 					<X.CardBottom>
 						<Text base="true" mode="light">{ copy.total_text }</Text>
-						<Text base="true" mode="light">{ currency.format(init_subtotal) }</Text>
+						<Text base="true" mode="light">{ currency.format(order.cart_subtotal) }</Text>
 					</X.CardBottom>
 				</X.OrderCard>
 			)}

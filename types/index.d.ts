@@ -31,3 +31,15 @@ export interface IDetailItem {
 		category: 'speakers' | 'headphones' | 'earphones',
 	}>,
 }
+
+/*  */
+
+export interface ICartItem extends IProduct {
+	cart_qty: number
+}
+
+export interface IOrder {
+	cart: Array<ICartItem>
+	cart_total: number
+	cart_subtotal: number
+}

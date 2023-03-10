@@ -5,7 +5,7 @@ import { type ICartModel, cartStore } from './model'
 
 const store = createStore<ICartModel>(persist(cartStore, {
 	storage: localforage.createInstance({
-		driver: localforage.INDEXEDDB,
+		driver: [localforage.INDEXEDDB, localforage.LOCALSTORAGE],
 		// name: 'GLOBAL_STORAGE',
 	}),
 }), {

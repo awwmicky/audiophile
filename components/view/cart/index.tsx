@@ -70,7 +70,9 @@ const Cart = () => {
 					<Button
 						variant="filled"
 						label={ copy.checkout_btn_text }
-						onPress={ () => navigate(root_path.checkout) }
+						onPress={ () => navigate(
+							`${ root_path.checkout }?status=successful&orderId=1`
+						) }
 					/>
 				</X.CartFooter>
 			</>

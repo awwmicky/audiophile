@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
-    "dev:cms": "0; cd ./studio && yarn start",
+    "dev:cms": "1; cd ./studio && yarn start",
     "dev:all": "concurrently -k -n \"API,UI\" -c \"yellow,cyan\" npm:\"dev:cms\" npm:\"dev\"",
     "build": "next build",
     "deploy:cms": "cd ./studio && yarn deploy",
@@ -13,7 +13,7 @@
     "delete": "./bin/delete.sh",
     "unbuild": "rm -rf ./dist ./.next",
     "reset-all": "yarn unbuild && yarn delete",
-    "update-all": "0; pnpm install && cd ./studio && yarn install"
+    "update-all": "1; pnpm install && cd ./studio && yarn install"
   },
   "dependencies": {
     "@nextui-org/react": "1.0.0-beta.12",

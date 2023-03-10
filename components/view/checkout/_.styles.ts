@@ -1,4 +1,3 @@
-import NextLink from 'next/link'
 import tw from 'twin.macro'
 import { Layer } from '@/components/layout'
 

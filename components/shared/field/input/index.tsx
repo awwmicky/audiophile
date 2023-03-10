@@ -1,5 +1,5 @@
 import type { FCC, InputHTMLAttributes } from 'react'
-import type { InputProps } from '@nextui-org/react'
+// import type { InputProps } from '@nextui-org/react'
 import * as X from './_.styles'
 
 // FIXME:

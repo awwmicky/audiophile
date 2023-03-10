@@ -7,8 +7,6 @@ import { runFireworks } from '@/src/_.utils'
 import localforage from 'localforage'
 import { IOrder } from '@/types'
 
-// TODO: add 'orders=' to query
-
 interface IPCheckout {
 	status: "successful" | "cancelled"
 	orderId: string
@@ -33,6 +31,7 @@ const CheckoutPage: NextPage<IPCheckout> = ({
 		if (status === 'successful' && cartList.length) {
 			runFireworks()
 			local.getItem<ILocalOrder>('ORDER').then((item) => {
+				// ONLY USE orderId=1
 				// const id = Object.keys(item || {}).length+1
 				local.setItem('ORDER', { ...item, [1]: {
 					cart: cartList,

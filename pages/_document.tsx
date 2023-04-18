@@ -16,7 +16,8 @@ const meta = {
 	author: 'Michael Fred Alvarez; @awwmicky',
 	image: isProd ? '/meta/' : '/meta/_',
 	alt: 'Audiophile - E-Commerce App',
-	link: 'https://audiophile-app.vercel.app/',
+	link: 'https://audiophile--web.vercel.app/',
+	site_name: 'audiophile--web'
 }
 
 const faviconLogo = [
@@ -28,7 +29,7 @@ const faviconLogo = [
 const ogContent = [
 	{ property: 'og:type', content: 'website' },
 	{ property: 'og:image:alt', content: meta.alt },
-	{ property: 'og:site_name', content: meta.link.substring(8) },
+	{ property: 'og:site_name', content: meta.site_name },
 	{ property: 'og:url', content: meta.link },
 	{ property: 'og:image', content: `${ meta.image }thumbnail.png` },
 	{ property: 'og:title', content: meta.title },
@@ -38,7 +39,7 @@ const ogContent = [
 const altOgContent = [
 	{ name: 'twitter:card', content: 'summary_large_image' },
 	{ name: 'twitter:image:alt', content: meta.alt },
-	{ property: 'twitter:domain', content: meta.link.substring(8) },
+	{ property: 'twitter:domain', content: meta.site_name },
 	{ property: 'twitter:url', content: meta.link },
 	{ name: 'twitter:image', content: `${ meta.image }thumbnail.png` },
 	{ name: 'twitter:title', content: meta.title },
